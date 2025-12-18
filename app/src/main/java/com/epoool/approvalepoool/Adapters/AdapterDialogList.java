@@ -50,7 +50,7 @@ public class AdapterDialogList extends RecyclerView.Adapter<AdapterDialogList.Cu
         customViewHolder.linear_item.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Adapters.AdapterDialogList.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                AdapterDialogList.this.itemListener.onClicked(((AlasanModel) AdapterDialogList.this.data.get(i)).getAlasanId(), ((AlasanModel) AdapterDialogList.this.data.get(i)).getId());
+                itemListener.onClicked(((AlasanModel) data.get(i)).getAlasanId(), ((AlasanModel) data.get(i)).getId());
             }
         });
     }

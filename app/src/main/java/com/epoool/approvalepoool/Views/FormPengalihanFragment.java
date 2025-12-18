@@ -88,67 +88,67 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         this.btnCek1.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (!FormPengalihanFragment.this.etNoBooking.getText().toString().equals("")) {
-                    FormPengalihanFragment.this.presenter.loadDataResi(FormPengalihanFragment.this.etNoBooking.getText().toString());
+                if (!etNoBooking.getText().toString().equals("")) {
+                    presenter.loadDataResi(etNoBooking.getText().toString());
                 } else {
-                    Toast.makeText(FormPengalihanFragment.this.context, "Isi kolom No. Resi dahulu", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Isi kolom No. Resi dahulu", Toast.LENGTH_SHORT).show();
                 }
             }
         });
         this.btnCek2.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (!FormPengalihanFragment.this.etNoShipto.getText().toString().equals("")) {
-                    FormPengalihanFragment.this.presenter.loadDataReceiver(FormPengalihanFragment.this.etNoShipto.getText().toString());
+                if (!etNoShipto.getText().toString().equals("")) {
+                    presenter.loadDataReceiver(etNoShipto.getText().toString());
                 } else {
-                    Toast.makeText(FormPengalihanFragment.this.context, "Isi kolom No. Receiver dahulu", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Isi kolom No. Receiver dahulu", Toast.LENGTH_SHORT).show();
                 }
             }
         });
         this.etNoShipto.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                Intent intent = new Intent(FormPengalihanFragment.this.context, (Class<?>) SearchActivity.class);
-                intent.putExtra(FirebaseAnalytics.Event.SEARCH, FormPengalihanFragment.this.etNoShipto.getText().toString());
+                Intent intent = new Intent(context, (Class<?>) SearchActivity.class);
+                intent.putExtra(FirebaseAnalytics.Event.SEARCH, etNoShipto.getText().toString());
                 intent.putExtra("tipe", 1);
-                FormPengalihanFragment.this.startActivityForResult(intent, 1);
-                Function.openAct(FormPengalihanFragment.this.context);
+                startActivityForResult(intent, 1);
+                Function.openAct(context);
             }
         });
         this.etNoBooking.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.4
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                Intent intent = new Intent(FormPengalihanFragment.this.context, (Class<?>) SearchActivity.class);
-                intent.putExtra(FirebaseAnalytics.Event.SEARCH, FormPengalihanFragment.this.etNoBooking.getText().toString());
+                Intent intent = new Intent(context, (Class<?>) SearchActivity.class);
+                intent.putExtra(FirebaseAnalytics.Event.SEARCH, etNoBooking.getText().toString());
                 intent.putExtra("tipe", 2);
-                FormPengalihanFragment.this.startActivityForResult(intent, 2);
-                Function.openAct(FormPengalihanFragment.this.context);
+                startActivityForResult(intent, 2);
+                Function.openAct(context);
             }
         });
         this.tvButton.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                FormPengalihanFragment.this.showProgressDialog();
-                FormPengalihanFragment.this.presenter.loadAlasan();
+                showProgressDialog();
+                presenter.loadAlasan();
             }
         });
         this.btnSubmit.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (FormPengalihanFragment.this.resi == null || FormPengalihanFragment.this.id_receiver == null || FormPengalihanFragment.this.idAlasan == null) {
-                    if (FormPengalihanFragment.this.resi == null) {
-                        Toast.makeText(FormPengalihanFragment.this.context, "Isi kolom No. SPJ dahulu", Toast.LENGTH_SHORT).show();
+                if (resi == null || id_receiver == null || idAlasan == null) {
+                    if (resi == null) {
+                        Toast.makeText(context, "Isi kolom No. SPJ dahulu", Toast.LENGTH_SHORT).show();
                         return;
-                    } else if (FormPengalihanFragment.this.id_receiver == null) {
-                        Toast.makeText(FormPengalihanFragment.this.context, "Isi kolom No. Receiver dahulu", Toast.LENGTH_SHORT).show();
+                    } else if (id_receiver == null) {
+                        Toast.makeText(context, "Isi kolom No. Receiver dahulu", Toast.LENGTH_SHORT).show();
                         return;
                     } else {
-                        Toast.makeText(FormPengalihanFragment.this.context, "Isi alasan dahulu", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Isi alasan dahulu", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
                 FormPengalihanFragment formPengalihanFragment = FormPengalihanFragment.this;
-                formPengalihanFragment.showDialog(formPengalihanFragment.context, "Yakin ingin dialihkan?", FormPengalihanFragment.this.tvShiptoAwal.getText().toString(), FormPengalihanFragment.this.tvNorefAwal.getText().toString(), FormPengalihanFragment.this.tvKotaShiptoAwal.getText().toString(), FormPengalihanFragment.this.tvNamaReceiver.getText().toString(), FormPengalihanFragment.this.tvNoRef.getText().toString(), FormPengalihanFragment.this.tvAlamatReceiver.getText().toString(), "YA", "TIDAK");
+                formPengalihanFragment.showDialog(formPengalihanFragment.context, "Yakin ingin dialihkan?", tvShiptoAwal.getText().toString(), tvNorefAwal.getText().toString(), tvKotaShiptoAwal.getText().toString(), tvNamaReceiver.getText().toString(), tvNoRef.getText().toString(), tvAlamatReceiver.getText().toString(), "YA", "TIDAK");
             }
         });
         return viewInflate;
@@ -185,7 +185,7 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 dialog.dismiss();
-                FormPengalihanFragment.this.presenter.sendPengalihan(FormPengalihanFragment.this.resi, FormPengalihanFragment.this.id_receiver, FormPengalihanFragment.this.idAlasan);
+                presenter.sendPengalihan(resi, id_receiver, idAlasan);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.8
@@ -307,10 +307,10 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
             adapterDialogList.setOnItemClickListener(new AdapterDialogList.OnListClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.9
                 @Override // com.epoool.approvalepoool.Adapters.AdapterDialogList.OnListClickListener
                 public void onClicked(String str2, String str3) {
-                    FormPengalihanFragment.this.alasanString = str2;
-                    FormPengalihanFragment.this.tvButton.setText("Alasan: " + FormPengalihanFragment.this.alasanString);
-                    FormPengalihanFragment.this.tvButton.setTextColor(FormPengalihanFragment.this.getResources().getColor(R.color.bpblack));
-                    FormPengalihanFragment.this.idAlasan = str3;
+                    alasanString = str2;
+                    tvButton.setText("Alasan: " + alasanString);
+                    tvButton.setTextColor(getResources().getColor(R.color.bpblack));
+                    idAlasan = str3;
                     dialogList.dismiss();
                 }
             });

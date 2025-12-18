@@ -34,12 +34,12 @@ public class DetailPengalihanPresenter {
 
             @Override // io.reactivex.Observer
             public void onNext(InsertUpdateModel insertUpdateModel) {
-                DetailPengalihanPresenter.this.view.afterApproved(insertUpdateModel.getCode().intValue(), insertUpdateModel.getPesan());
+                view.afterApproved(insertUpdateModel.getCode().intValue(), insertUpdateModel.getPesan());
             }
 
             @Override // io.reactivex.Observer
             public void onError(Throwable th) {
-                DetailPengalihanPresenter.this.view.afterApproved(0, Constant.warningNoConnection);
+                view.afterApproved(0, Constant.warningNoConnection);
             }
         });
     }

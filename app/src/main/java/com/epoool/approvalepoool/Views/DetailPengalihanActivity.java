@@ -76,22 +76,22 @@ public class DetailPengalihanActivity extends AppCompatActivity implements Detai
         this.btnTolak.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.DetailPengalihanActivity.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                DetailPengalihanActivity.this.presenter.updateStatus(DetailPengalihanActivity.this.pengalihan.getIdPengalihan(), ExifInterface.GPS_MEASUREMENT_2D);
+                presenter.updateStatus(pengalihan.getIdPengalihan(), ExifInterface.GPS_MEASUREMENT_2D);
             }
         });
         this.btnSetuju.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.DetailPengalihanActivity.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (DetailPengalihanActivity.this.pengalihan.getIncoterm().equals(ExifInterface.GPS_MEASUREMENT_2D)) {
-                    DetailPengalihanActivity.this.presenter.updateStatus(DetailPengalihanActivity.this.pengalihan.getIdPengalihan(), ExifInterface.GPS_MEASUREMENT_3D);
+                if (pengalihan.getIncoterm().equals(ExifInterface.GPS_MEASUREMENT_2D)) {
+                    presenter.updateStatus(pengalihan.getIdPengalihan(), ExifInterface.GPS_MEASUREMENT_3D);
                     return;
                 }
-                if (!DetailPengalihanActivity.this.pengalihan.getIncoterm().equals(ExifInterface.GPS_MEASUREMENT_3D)) {
-                    DetailPengalihanActivity.this.presenter.updateStatus(DetailPengalihanActivity.this.pengalihan.getIdPengalihan(), "1");
+                if (!pengalihan.getIncoterm().equals(ExifInterface.GPS_MEASUREMENT_3D)) {
+                    presenter.updateStatus(pengalihan.getIdPengalihan(), "1");
                 } else if (Constant.tipe_sub_user.equals(ExifInterface.GPS_MEASUREMENT_2D)) {
-                    DetailPengalihanActivity.this.presenter.updateStatus(DetailPengalihanActivity.this.pengalihan.getIdPengalihan(), "6");
+                    presenter.updateStatus(pengalihan.getIdPengalihan(), "6");
                 } else {
-                    DetailPengalihanActivity.this.presenter.updateStatus(DetailPengalihanActivity.this.pengalihan.getIdPengalihan(), "1");
+                    presenter.updateStatus(pengalihan.getIdPengalihan(), "1");
                 }
             }
         });

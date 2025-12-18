@@ -66,7 +66,7 @@ public class AdapterPengalihan extends RecyclerView.Adapter<AdapterPengalihan.Vi
         viewHolder.view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Adapters.AdapterPengalihan.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                AdapterPengalihan.this.mListener.onItemClick(i);
+                mListener.onItemClick(i);
             }
         });
     }

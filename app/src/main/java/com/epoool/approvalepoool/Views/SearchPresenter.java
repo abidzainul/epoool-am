@@ -36,12 +36,12 @@ public class SearchPresenter {
 
             @Override // io.reactivex.Observer
             public void onNext(SearchModel searchModel) {
-                SearchPresenter.this.view.showSearch(searchModel.getData(), searchModel.getCode().intValue(), searchModel.getPesan());
+                view.showSearch(searchModel.getData(), searchModel.getCode().intValue(), searchModel.getPesan());
             }
 
             @Override // io.reactivex.Observer
             public void onError(Throwable th) {
-                SearchPresenter.this.view.showSearch(new ArrayList(), 0, Constant.warningNoConnection);
+                view.showSearch(new ArrayList(), 0, Constant.warningNoConnection);
             }
         });
     }
@@ -58,12 +58,12 @@ public class SearchPresenter {
 
             @Override // io.reactivex.Observer
             public void onNext(SearchModel searchModel) {
-                SearchPresenter.this.view.showSearch(searchModel.getData(), searchModel.getCode().intValue(), searchModel.getPesan());
+                view.showSearch(searchModel.getData(), searchModel.getCode().intValue(), searchModel.getPesan());
             }
 
             @Override // io.reactivex.Observer
             public void onError(Throwable th) {
-                SearchPresenter.this.view.showSearch(new ArrayList(), 0, Constant.warningNoConnection);
+                view.showSearch(new ArrayList(), 0, Constant.warningNoConnection);
             }
         });
     }

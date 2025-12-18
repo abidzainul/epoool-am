@@ -66,10 +66,10 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.V
         this.btnLogin.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.LoginActivity.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (LoginActivity.this.etUsername.getText().toString().equals("") || LoginActivity.this.etPassword.getText().toString().equals("")) {
-                    Function.snackBarRed(LoginActivity.this.context, "Mohon lengkapi semua field di atas");
+                if (etUsername.getText().toString().equals("") || etPassword.getText().toString().equals("")) {
+                    Function.snackBarRed(context, "Mohon lengkapi semua field di atas");
                 } else {
-                    LoginActivity.this.presenter.doLogin(LoginActivity.this.etUsername.getText().toString(), LoginActivity.this.etPassword.getText().toString());
+                    presenter.doLogin(etUsername.getText().toString(), etPassword.getText().toString());
                 }
             }
         });

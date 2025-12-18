@@ -7,4 +7,23 @@
     <string name="submit">Submit</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="drawer_open">Open navigation drawer</string>
+
+    <!-- Added strings for dialog_add_delivery_req -->
+    <string name="label_tanggal_kirim">Tanggal Kirim:</string>
+    <string name="hint_tanggal_kirim">Tanggal Kirim</string>
+    <string name="label_jumlah_truck">Jumlah Truck:</string>
+    <string name="hint_jumlah_truck">Jumlah Truck</string>
+    <string name="label_qty_to">Qty TO:</string>
+    <string name="hint_qty">Qty TO</string>
+    <string name="label_catatan">Catatan:</string>
+    <string name="hint_catatan">Catatan</string>
+    <string name="button_simpan">Simpan</string>
+
+    <!-- ...existing strings... -->
+    <string name="no_request">No Request</string>
+    <string name="qty_default">Qty: 15</string>
+    <string name="send_date_default">Tanggal Kirim: 11/12/2025</string>
+    <string name="catatan">Catatan</string>
+    <string name="no_resi_default">No Resi: 12342345</string>
+    <string name="desc_delete">Delete</string>
 </resources>

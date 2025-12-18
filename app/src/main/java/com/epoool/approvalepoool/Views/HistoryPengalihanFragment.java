@@ -52,17 +52,17 @@ public class HistoryPengalihanFragment extends Fragment implements ListPengaliha
         this.srl.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() { // from class: com.epoool.approvalepoool.Views.HistoryPengalihanFragment.1
             @Override // com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout.OnRefreshListener
             public void onRefresh(SwipyRefreshLayoutDirection swipyRefreshLayoutDirection) {
-                HistoryPengalihanFragment.this.presenter.loadPengalihan("1#2", HistoryPengalihanFragment.this.search);
+                presenter.loadPengalihan("1#2", search);
             }
         });
         this.editSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.epoool.approvalepoool.Views.HistoryPengalihanFragment.2
             @Override // android.widget.TextView.OnEditorActionListener
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == 3) {
-                    HistoryPengalihanFragment.this.srl.setRefreshing(true);
-                    HistoryPengalihanFragment.this.search = textView.getText().toString();
-                    HistoryPengalihanFragment.this.presenter.loadPengalihan("1#2", HistoryPengalihanFragment.this.search);
-                    ((InputMethodManager) HistoryPengalihanFragment.this.context.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(HistoryPengalihanFragment.this.editSearch.getWindowToken(), 0);
+                    srl.setRefreshing(true);
+                    search = textView.getText().toString();
+                    presenter.loadPengalihan("1#2", search);
+                    ((InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(editSearch.getWindowToken(), 0);
                 }
                 return false;
             }
@@ -89,10 +89,10 @@ public class HistoryPengalihanFragment extends Fragment implements ListPengaliha
             @Override // com.epoool.approvalepoool.Adapters.AdapterPengalihan.Listener
             public void onItemClick(int i2) {
                 String jsonString = new GsonConverter().toJsonString(list.get(i2));
-                Intent intent = new Intent(HistoryPengalihanFragment.this.context, (Class<?>) DetailPengalihanActivity.class);
+                Intent intent = new Intent(context, (Class<?>) DetailPengalihanActivity.class);
                 intent.putExtra("pengalihan_string", jsonString);
-                HistoryPengalihanFragment.this.context.startActivity(intent);
-                Function.openAct(HistoryPengalihanFragment.this.context);
+                context.startActivity(intent);
+                Function.openAct(context);
             }
         }));
         this.rcPengalihan.setNestedScrollingEnabled(false);

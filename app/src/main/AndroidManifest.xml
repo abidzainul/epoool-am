@@ -23,10 +23,10 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <permission
-        android:name="com.epoool.approvalepoool.permission.MAPS_RECEIVE"
+        android:name="permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.epoool.approvalepoool.googlemapsv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="googlemapsv2.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.READ_LOGS"
         tools:ignore="ProtectedPermissions" />
 
@@ -34,7 +34,7 @@
         android:theme="@style/AppTheme"
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
-        android:name="com.epoool.approvalepoool.SampleApplication"
+        android:name="SampleApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:largeHeap="true"
@@ -45,19 +45,22 @@
         tools:replace="android:icon">
 
         <activity
-            android:name="com.epoool.approvalepoool.Views.SearchActivity"
+            android:name=".Views.SearchActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible"/>
         <activity
             android:theme="@style/AppTheme.NoActionBar"
-            android:name="com.epoool.approvalepoool.Views.MainActivity"
+            android:name=".Views.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity
-            android:name="com.epoool.approvalepoool.Views.DetailPengalihanActivity"
+            android:name=".Views.DetailPengalihanActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.epoool.approvalepoool.Views.LoginActivity"
+            android:name=".Views.RequestSOActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Views.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -70,30 +70,30 @@ public class MainActivity extends AppCompatActivity {
         }
         Constant.adapterListViewDrawer = new AdapterListViewDrawer(this, arrayList);
         this.lvDrawer.setAdapter((ListAdapter) Constant.adapterListViewDrawer);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) { // from class: com.epoool.approvalepoool.Views.MainActivity.1
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) { // from class: com.epoool.approvalepoool.Views.1
             @Override // androidx.appcompat.app.ActionBarDrawerToggle, androidx.drawerlayout.widget.DrawerLayout.DrawerListener
             public void onDrawerClosed(View view) {
-                MainActivity.this.getSupportActionBar().setTitle(MainActivity.this.mTitle);
-                MainActivity.this.invalidateOptionsMenu();
+                getSupportActionBar().setTitle(mTitle);
+                invalidateOptionsMenu();
             }
 
             @Override // androidx.appcompat.app.ActionBarDrawerToggle, androidx.drawerlayout.widget.DrawerLayout.DrawerListener
             public void onDrawerOpened(View view) {
-                MainActivity.this.getSupportActionBar().setTitle(MainActivity.this.mDrawerTitle);
-                MainActivity.this.invalidateOptionsMenu();
+                getSupportActionBar().setTitle(mDrawerTitle);
+                invalidateOptionsMenu();
             }
         };
         this.mDrawerToggle = actionBarDrawerToggle;
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
         this.mDrawerToggle.setDrawerIndicatorEnabled(false);
         this.mDrawerToggle.setHomeAsUpIndicator(ResourcesCompat.getDrawable(getResources(), R.drawable.menu_putih, getTheme()));
-        this.mDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.MainActivity.2
+        this.mDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (MainActivity.mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
-                    MainActivity.mDrawerLayout.closeDrawer(GravityCompat.START);
+                if (mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
+                    mDrawerLayout.closeDrawer(GravityCompat.START);
                 } else {
-                    MainActivity.mDrawerLayout.openDrawer(GravityCompat.START);
+                    mDrawerLayout.openDrawer(GravityCompat.START);
                 }
             }
         });
@@ -101,10 +101,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void logOut(final SharedPreferences sharedPreferences) {
-        DialogHelper.showWithDoubleButton(context, "Log Out", "Apakah Anda yakin ingin log out?", "Ya", "Tidak", new Runnable() { // from class: com.epoool.approvalepoool.Views.MainActivity.3
+        DialogHelper.showWithDoubleButton(context, "Log Out", "Apakah Anda yakin ingin log out?", "Ya", "Tidak", new Runnable() { // from class: com.epoool.approvalepoool.Views.3
             @Override // java.lang.Runnable
             public void run() {
-                MainActivity.requestLogOut(sharedPreferences);
+                requestLogOut(sharedPreferences);
             }
         });
     }
@@ -113,20 +113,20 @@ public class MainActivity extends AppCompatActivity {
         OkHttpHelper okHttpHelper = new OkHttpHelper();
         final AlertDialog alertDialogCreate = new AlertDialog.Builder(context).setView(R.layout.dialog_progress_bar).create();
         alertDialogCreate.show();
-        Runnable runnable = new Runnable() { // from class: com.epoool.approvalepoool.Views.MainActivity.4
+        Runnable runnable = new Runnable() { // from class: com.epoool.approvalepoool.Views.4
             @Override // java.lang.Runnable
             public void run() {
                 alertDialogCreate.dismiss();
                 sharedPreferences.edit().clear().apply();
                 if (Constant.intentQueue != null) {
-                    MainActivity.context.stopService(Constant.intentQueue);
+                    context.stopService(Constant.intentQueue);
                 }
                 if (Constant.intentService != null) {
-                    MainActivity.context.stopService(Constant.intentService);
+                    context.stopService(Constant.intentService);
                 }
-                MainActivity.context.startActivity(new Intent(MainActivity.context, (Class<?>) LoginActivity.class));
-                Function.openAct(MainActivity.context);
-                ((Activity) MainActivity.context).finish();
+                context.startActivity(new Intent(context, (Class<?>) LoginActivity.class));
+                Function.openAct(context);
+                ((Activity) context).finish();
             }
         };
         okHttpHelper.posting(context, Constant.url + "logout", Function.paramAdderPost(new HashMap()), runnable, false, (RelativeLayout) null, (View) null);
@@ -139,11 +139,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override // androidx.activity.ComponentActivity, android.app.Activity
     public void onBackPressed() {
-        DialogHelper.showWithDoubleButton(context, "Keluar", "Apakah anda yakin ingin keluar?", "Ya", "Tidak", new Runnable() { // from class: com.epoool.approvalepoool.Views.MainActivity.5
+        DialogHelper.showWithDoubleButton(context, "Keluar", "Apakah anda yakin ingin keluar?", "Ya", "Tidak", new Runnable() { // from class: com.epoool.approvalepoool.Views.5
             @Override // java.lang.Runnable
             public void run() {
-                MainActivity.this.finish();
-                Function.closeAct(MainActivity.context);
+                finish();
+                Function.closeAct(context);
             }
         });
     }

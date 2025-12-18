@@ -69,25 +69,25 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
             @Override // android.text.TextWatcher
             public void afterTextChanged(final Editable editable) {
                 if (editable.toString().length() >= 3) {
-                    if (SearchActivity.this.runnableSearch != null) {
-                        SearchActivity.this.handler.removeCallbacks(SearchActivity.this.runnableSearch);
-                        SearchActivity.this.runnableSearch = null;
+                    if (runnableSearch != null) {
+                        handler.removeCallbacks(runnableSearch);
+                        runnableSearch = null;
                     }
-                    SearchActivity.this.runnableSearch = new Runnable() { // from class: com.epoool.approvalepoool.Views.SearchActivity.1.1
+                    runnableSearch = new Runnable() { // from class: com.epoool.approvalepoool.Views.SearchActivity.1.1
                         @Override // java.lang.Runnable
                         public void run() {
-                            if (SearchActivity.this.getIntent().getIntExtra("tipe", 0) == 1) {
-                                SearchActivity.this.presenter.loadSearchReceiver(editable.toString());
-                            } else if (SearchActivity.this.getIntent().getIntExtra("tipe", 0) == 2) {
-                                SearchActivity.this.presenter.loadSearchSPJ(editable.toString());
+                            if (getIntent().getIntExtra("tipe", 0) == 1) {
+                                presenter.loadSearchReceiver(editable.toString());
+                            } else if (getIntent().getIntExtra("tipe", 0) == 2) {
+                                presenter.loadSearchSPJ(editable.toString());
                             }
                         }
                     };
-                    SearchActivity.this.handler.postDelayed(SearchActivity.this.runnableSearch, 500L);
+                    handler.postDelayed(runnableSearch, 500L);
                     return;
                 }
                 if (editable.toString().length() == 0) {
-                    SearchActivity.this.tvKosong.setVisibility(View.VISIBLE);
+                    tvKosong.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -107,8 +107,8 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
                 public void onClicked(String str2, int i2) {
                     Intent intent = new Intent();
                     intent.putExtra(FirebaseAnalytics.Event.SEARCH, str2);
-                    SearchActivity.this.setResult(-1, intent);
-                    SearchActivity.this.finish();
+                    setResult(-1, intent);
+                    finish();
                 }
             });
             return;

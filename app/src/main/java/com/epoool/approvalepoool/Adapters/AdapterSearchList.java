@@ -57,10 +57,10 @@ public class AdapterSearchList extends RecyclerView.Adapter<AdapterSearchList.Cu
         customViewHolder.linear_item.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Adapters.AdapterSearchList.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (AdapterSearchList.this.tipe == 1) {
-                    AdapterSearchList.this.itemListener.onClicked(((SearchModel) AdapterSearchList.this.data.get(i)).getNoReferensi(), i);
-                } else if (AdapterSearchList.this.tipe == 2) {
-                    AdapterSearchList.this.itemListener.onClicked(((SearchModel) AdapterSearchList.this.data.get(i)).getNoSpj(), i);
+                if (tipe == 1) {
+                    itemListener.onClicked(((SearchModel) data.get(i)).getNoReferensi(), i);
+                } else if (tipe == 2) {
+                    itemListener.onClicked(((SearchModel) data.get(i)).getNoSpj(), i);
                 }
             }
         });

@@ -34,12 +34,12 @@ public class LoginPresenter {
 
             @Override // io.reactivex.Observer
             public void onNext(UserLoginModel userLoginModel) {
-                LoginPresenter.this.view.afterLogin(userLoginModel.getData(), userLoginModel.getCode().intValue(), userLoginModel.getPesan(), userLoginModel.getToken());
+                view.afterLogin(userLoginModel.getData(), userLoginModel.getCode().intValue(), userLoginModel.getPesan(), userLoginModel.getToken());
             }
 
             @Override // io.reactivex.Observer
             public void onError(Throwable th) {
-                LoginPresenter.this.view.afterLogin(new UserLoginModel(), 0, Constant.warningNoConnection, "0");
+                view.afterLogin(new UserLoginModel(), 0, Constant.warningNoConnection, "0");
             }
         });
     }

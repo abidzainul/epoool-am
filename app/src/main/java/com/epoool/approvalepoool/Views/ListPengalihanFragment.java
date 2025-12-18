@@ -58,9 +58,9 @@ public class ListPengalihanFragment extends Fragment implements ListPengalihanPr
             @Override // com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout.OnRefreshListener
             public void onRefresh(SwipyRefreshLayoutDirection swipyRefreshLayoutDirection) {
                 if (Constant.tipe_sub_user.equals("5")) {
-                    ListPengalihanFragment.this.presenter.loadPengalihan("6", ListPengalihanFragment.this.search);
+                    presenter.loadPengalihan("6", search);
                 } else {
-                    ListPengalihanFragment.this.presenter.loadPengalihan("0", ListPengalihanFragment.this.search);
+                    presenter.loadPengalihan("0", search);
                 }
             }
         });
@@ -68,14 +68,14 @@ public class ListPengalihanFragment extends Fragment implements ListPengalihanPr
             @Override // android.widget.TextView.OnEditorActionListener
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == 3) {
-                    ListPengalihanFragment.this.srl.setRefreshing(true);
-                    ListPengalihanFragment.this.search = textView.getText().toString();
+                    srl.setRefreshing(true);
+                    search = textView.getText().toString();
                     if (Constant.tipe_sub_user.equals("5")) {
-                        ListPengalihanFragment.this.presenter.loadPengalihan("6", ListPengalihanFragment.this.search);
+                        presenter.loadPengalihan("6", search);
                     } else {
-                        ListPengalihanFragment.this.presenter.loadPengalihan("0", ListPengalihanFragment.this.search);
+                        presenter.loadPengalihan("0", search);
                     }
-                    ((InputMethodManager) ListPengalihanFragment.this.context.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(ListPengalihanFragment.this.editSearch.getWindowToken(), 0);
+                    ((InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(editSearch.getWindowToken(), 0);
                 }
                 return false;
             }
@@ -106,10 +106,10 @@ public class ListPengalihanFragment extends Fragment implements ListPengalihanPr
             @Override // com.epoool.approvalepoool.Adapters.AdapterPengalihan.Listener
             public void onItemClick(int i2) {
                 String jsonString = new GsonConverter().toJsonString(list.get(i2));
-                Intent intent = new Intent(ListPengalihanFragment.this.context, (Class<?>) DetailPengalihanActivity.class);
+                Intent intent = new Intent(context, (Class<?>) DetailPengalihanActivity.class);
                 intent.putExtra("pengalihan_string", jsonString);
-                ListPengalihanFragment.this.context.startActivity(intent);
-                Function.openAct(ListPengalihanFragment.this.context);
+                context.startActivity(intent);
+                Function.openAct(context);
             }
         }));
         this.rcPengalihan.setNestedScrollingEnabled(false);

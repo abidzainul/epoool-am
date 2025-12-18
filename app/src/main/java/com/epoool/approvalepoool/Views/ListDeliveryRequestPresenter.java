@@ -17,8 +17,7 @@ import retrofit2.http.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
-public class ListPengalihanPresenter {
+public class ListDeliveryRequestPresenter {
     private ApiInterface apiInterface = (ApiInterface) ApiClient.getClient().create(ApiInterface.class);
     private ViewListPengalihan view;
 
@@ -26,7 +25,7 @@ public class ListPengalihanPresenter {
         void showPengalihan(List<PengalihanModel> list, int i, String str);
     }
 
-    public ListPengalihanPresenter(ViewListPengalihan viewListPengalihan) {
+    public ListDeliveryRequestPresenter(ViewListPengalihan viewListPengalihan) {
         this.view = viewListPengalihan;
     }
 

@@ -20,13 +20,12 @@ import com.epoool.approvalepoool.R;
 import com.epoool.approvalepoool.Utils.Constant;
 import com.epoool.approvalepoool.Utils.Function;
 import com.epoool.approvalepoool.Utils.GsonConverter;
-import com.epoool.approvalepoool.Views.ListPengalihanPresenter;
 import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
 import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 import java.util.List;
 
 /* loaded from: classes.dex */
-public class DeliveryRequestFragment extends Fragment implements ListPengalihanPresenter.ViewListPengalihan {
+public class ListDeliveryRequestFragment extends Fragment implements ListPengalihanPresenter.ViewListPengalihan {
     private CardView cardCari;
     Context context;
     private EditText editSearch;
@@ -36,16 +35,12 @@ public class DeliveryRequestFragment extends Fragment implements ListPengalihanP
     private SwipyRefreshLayout srl;
     private TextView tvKosong;
 
-    @Override // androidx.fragment.app.Fragment
+    @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View viewInflate = layoutInflater.inflate(R.layout.fragment_list_pengalihan, viewGroup, false);
-        this.rcPengalihan = (RecyclerView) viewInflate.findViewById(R.id.rc_pengalihan);
-        this.srl = (SwipyRefreshLayout) viewInflate.findViewById(R.id.srl_temp);
-        this.tvKosong = (TextView) viewInflate.findViewById(R.id.tv_kosong);
-        this.cardCari = (CardView) viewInflate.findViewById(R.id.card_cari);
-        this.editSearch = (EditText) viewInflate.findViewById(R.id.edit_search);
+        View viewInflate = layoutInflater.inflate(R.layout.fragment_delivery_request, viewGroup, false);
+
         this.srl.setRefreshing(true);
-        getActivity().setTitle("Approval Pengalihan");
+        getActivity().setTitle("Delivery Request");
         this.context = getActivity();
         this.cardCari.setVisibility(View.VISIBLE);
         this.presenter = new ListPengalihanPresenter(this);
@@ -54,32 +49,18 @@ public class DeliveryRequestFragment extends Fragment implements ListPengalihanP
         } else {
             this.presenter.loadPengalihan("0", this.search);
         }
+
         this.srl.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() { // from class: com.epoool.approvalepoool.Views.ListPengalihanFragment.1
-            @Override // com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout.OnRefreshListener
+            @Override
             public void onRefresh(SwipyRefreshLayoutDirection swipyRefreshLayoutDirection) {
                 if (Constant.tipe_sub_user.equals("5")) {
-                    ListPengalihanFragment.this.presenter.loadPengalihan("6", ListPengalihanFragment.this.search);
+                    presenter.loadPengalihan("6", search);
                 } else {
-                    ListPengalihanFragment.this.presenter.loadPengalihan("0", ListPengalihanFragment.this.search);
+                    presenter.loadPengalihan("0", search);
                 }
             }
         });
-        this.editSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.epoool.approvalepoool.Views.ListPengalihanFragment.2
-            @Override // android.widget.TextView.OnEditorActionListener
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if (i == 3) {
-                    ListPengalihanFragment.this.srl.setRefreshing(true);
-                    ListPengalihanFragment.this.search = textView.getText().toString();
-                    if (Constant.tipe_sub_user.equals("5")) {
-                        ListPengalihanFragment.this.presenter.loadPengalihan("6", ListPengalihanFragment.this.search);
-                    } else {
-                        ListPengalihanFragment.this.presenter.loadPengalihan("0", ListPengalihanFragment.this.search);
-                    }
-                    ((InputMethodManager) ListPengalihanFragment.this.context.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(ListPengalihanFragment.this.editSearch.getWindowToken(), 0);
-                }
-                return false;
-            }
-        });
+
         return viewInflate;
     }
 
@@ -94,7 +75,7 @@ public class DeliveryRequestFragment extends Fragment implements ListPengalihanP
         }
     }
 
-    @Override // com.epoool.approvalepoool.Views.ListPengalihanPresenter.ViewListPengalihan
+    @Override
     public void showPengalihan(final List<PengalihanModel> list, int i, String str) {
         this.srl.setRefreshing(false);
         if (i != 1 || list.size() == 0) {
@@ -106,10 +87,10 @@ public class DeliveryRequestFragment extends Fragment implements ListPengalihanP
             @Override // com.epoool.approvalepoool.Adapters.AdapterPengalihan.Listener
             public void onItemClick(int i2) {
                 String jsonString = new GsonConverter().toJsonString(list.get(i2));
-                Intent intent = new Intent(ListPengalihanFragment.this.context, (Class<?>) DetailPengalihanActivity.class);
+                Intent intent = new Intent(context, (Class<?>) DetailPengalihanActivity.class);
                 intent.putExtra("pengalihan_string", jsonString);
-                ListPengalihanFragment.this.context.startActivity(intent);
-                Function.openAct(ListPengalihanFragment.this.context);
+                context.startActivity(intent);
+                Function.openAct(context);
             }
         }));
         this.rcPengalihan.setNestedScrollingEnabled(false);
