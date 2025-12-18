@@ -1,0 +1,243 @@
+<resources>
+
+
+    <style name="ButtonYellowText" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="ButtonGreyText" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimary2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <!--<style name="MyCustomTabText" parent="Widget.Design.TabLayout">-->
+        <!--<item name="tabTextAppearance">@style/TextVerySmallBlue</item>-->
+        <!--<item name="tabSelectedTextColor">#000000</item>-->
+    <!--</style>-->
+
+
+
+
+    <style name="EditTextChild" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="TextParentDrawer" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextChildDrawer" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+
+    <style name="TextTitleBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="TextTitle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="TextTitleGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="TextTitleToolbar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextTitleBig" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextTitleBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="TextTitleGreen" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/app_green</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="TextContent" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/text2</item>
+    </style>
+
+    <style name="TextContentBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContentBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContentGreen" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/app_green</item>
+        <item name="android:textSize">@dimen/text2</item>
+    </style>
+
+    <style name="TextContentGreenBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/app_green</item>
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContentWhiteBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextTitleWhiteRegular" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="TextContentRed" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/app_red</item>
+        <item name="android:textSize">@dimen/text2</item>
+    </style>
+
+    <style name="TextContentKonfirmasi" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@android:color/holo_green_dark</item>
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="TextContentGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/text2</item>
+    </style>
+
+    <style name="TextContentWhite" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">@dimen/text1</item>
+    </style>
+
+    <style name="TextSmall" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/text3</item>
+    </style>
+
+    <style name="TextSmallWhite" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/text3</item>
+    </style>
+
+    <style name="TextSmallWhiteBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/text3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextSmallBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/text3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextSmallGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/text3</item>
+    </style>
+
+    <style name="TextSmallBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/text3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextSmallGreenBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/app_green</item>
+        <item name="android:textSize">@dimen/text3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextVerySmall" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/text4</item>
+    </style>
+
+    <style name="TextVerySmallBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/text4</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RadioButtonUrutkan" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="colorAccent">@color/app_green</item>
+        <item name="colorControlHighlight">@color/app_green</item>
+        <item name="android:colorPressedHighlight">@color/app_green</item>
+        <item name="colorPrimaryDark">@color/app_green</item>
+        <item name="colorPrimary">@color/app_green</item>
+        <item name="colorControlActivated">@color/app_green</item>
+    </style>
+
+    <style name="EtWhite">
+        <!-- Used for the bottom line when not selected / focused -->
+        <item name="colorControlNormal">#fcfcfc</item>
+        <!-- colorControlActivated & colorControlHighlight use the colorAccent color by default -->
+    </style>
+
+    <!--<style name="TextVerySmallBlue" parent="TextAppearance.Design.Tab">-->
+        <!--<item name="android:textColor">#444</item>-->
+        <!--<item name="android:textSize">10sp</item>-->
+    <!--</style>-->
+
+
+
+
+
+    <!--<style name="OpaTabLayout" parent="Widget.Design.TabLayout">-->
+        <!--<item name="tabTextAppearance">@style/TextVerySmallBold</item>-->
+        <!--<item name="tabSelectedTextColor">#009e4e</item>-->
+    <!--</style>-->
+
+
+
+
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">@android:color/white</item>
+        <item name="android:textColor">#FF01F0</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+
+
+    <style name="ButtonDefault" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text1</item>]
+        <item name="android:background">@drawable/btn_save</item>
+    </style>
+
+</resources>

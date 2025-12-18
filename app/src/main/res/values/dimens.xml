@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="text0">16sp</dimen>
+    <dimen name="text1">14sp</dimen>
+    <dimen name="text2">12sp</dimen>
+    <dimen name="text3">10sp</dimen>
+    <dimen name="text4">8sp</dimen>
+    <dimen name="bottom_sheet">300dp</dimen>
+</resources>

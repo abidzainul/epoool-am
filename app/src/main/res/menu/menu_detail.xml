@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Order Selesai"
+        app:showAsAction="always"
+        android:icon="@drawable/ef_ic_done_white">
+
+        <menu>
+
+            <item
+                android:id="@+id/menu_status_do"
+                android:icon="@drawable/ef_ic_done_white"
+                android:title="Status Order"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/menu_kirim_pesan"
+                android:icon="@drawable/ef_ic_done_white"
+                android:title="Kirim Pesan"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menu_lihat_spj"
+                android:icon="@drawable/ef_ic_done_white"
+                android:title="Lihat SPJ"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menu_laporan_kecelakaan"
+                android:icon="@drawable/ef_ic_done_white"
+                android:title="Laporan Kecelakaan"
+                app:showAsAction="never" />
+
+        </menu>
+
+    </item>
+
+</menu>

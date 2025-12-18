@@ -1,0 +1,115 @@
+package com.epoool.approvalepoool.Utils.drawer;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.core.view.GravityCompat;
+import androidx.exifinterface.media.ExifInterface;
+import com.epoool.approvalepoool.R;
+import com.epoool.approvalepoool.Utils.Constant;
+import com.epoool.approvalepoool.Utils.Function;
+import com.epoool.approvalepoool.Views.FormPengalihanFragment;
+import com.epoool.approvalepoool.Views.HistoryPengalihanFragment;
+import com.epoool.approvalepoool.Views.ListPengalihanFragment;
+import com.epoool.approvalepoool.Views.MainActivity;
+import java.util.ArrayList;
+
+/* loaded from: classes.dex */
+public class AdapterListViewDrawer extends BaseAdapter {
+    private Context context;
+    private ArrayList<String> list;
+
+    @Override // android.widget.Adapter
+    public Object getItem(int i) {
+        return null;
+    }
+
+    @Override // android.widget.Adapter
+    public long getItemId(int i) {
+        return 0L;
+    }
+
+    public AdapterListViewDrawer(Context context, ArrayList<String> arrayList) {
+        this.context = context;
+        this.list = arrayList;
+    }
+
+    @Override // android.widget.Adapter
+    public int getCount() {
+        return this.list.size();
+    }
+
+    @Override // android.widget.Adapter
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        String str = this.list.get(i);
+        if (str.equals("0")) {
+            view = ((Activity) this.context).getLayoutInflater().inflate(R.layout.item_drawer_direct, viewGroup, false);
+            ImageView imageView = (ImageView) view.findViewById(R.id.iv_logout_drawer);
+            TextView textView = (TextView) view.findViewById(R.id.tv_logout_drawer);
+            imageView.setImageResource(R.drawable.drawer_check);
+            textView.setText("APPROVAL PENGALIHAN");
+            view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.1
+                @Override // android.view.View.OnClickListener
+                public void onClick(View view2) {
+                    MainActivity.closeDrawer();
+                    Function.getFragment(AdapterListViewDrawer.this.context, new ListPengalihanFragment(), Constant.holderFragment);
+                }
+            });
+        } else if (str.equals("7")) {
+            view = ((Activity) this.context).getLayoutInflater().inflate(R.layout.item_drawer_direct, viewGroup, false);
+            ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_logout_drawer);
+            TextView textView2 = (TextView) view.findViewById(R.id.tv_logout_drawer);
+            imageView2.setImageResource(R.drawable.drawer_input);
+            textView2.setText("PENGAJUAN PENGALIHAN");
+            view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.2
+                @Override // android.view.View.OnClickListener
+                public void onClick(View view2) {
+                    MainActivity.closeDrawer();
+                    Function.getFragment(AdapterListViewDrawer.this.context, new FormPengalihanFragment(), Constant.holderFragment);
+                }
+            });
+        } else if (str.equals("6")) {
+            view = ((Activity) this.context).getLayoutInflater().inflate(R.layout.item_drawer_direct, viewGroup, false);
+            ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_logout_drawer);
+            TextView textView3 = (TextView) view.findViewById(R.id.tv_logout_drawer);
+            imageView3.setImageResource(R.drawable.drawer_history);
+            textView3.setText("RIWAYAT PENGALIHAN");
+            view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.3
+                @Override // android.view.View.OnClickListener
+                public void onClick(View view2) {
+                    Function.getFragment(AdapterListViewDrawer.this.context, new HistoryPengalihanFragment(), Constant.holderFragment);
+                    MainActivity.mDrawerLayout.closeDrawer(GravityCompat.START);
+                }
+            });
+        } else if (str.equals(ExifInterface.GPS_MEASUREMENT_3D)) {
+            final SharedPreferences sharedPreferences = this.context.getSharedPreferences("MyPreferences", 0);
+            View viewInflate = ((Activity) this.context).getLayoutInflater().inflate(R.layout.item_drawer_direct, viewGroup, false);
+            TextView textView4 = (TextView) viewInflate.findViewById(R.id.tv_logout_drawer);
+            ((ImageView) viewInflate.findViewById(R.id.iv_logout_drawer)).setImageResource(R.drawable.drawer_logout);
+            textView4.setText("LOGOUT");
+            viewInflate.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.4
+                @Override // android.view.View.OnClickListener
+                public void onClick(View view2) {
+                    MainActivity.closeDrawer();
+                    MainActivity.logOut(sharedPreferences);
+                }
+            });
+            view = viewInflate;
+        }
+        if (str.equals("1")) {
+            view = ((Activity) this.context).getLayoutInflater().inflate(R.layout.header_drawer, viewGroup, false);
+            TextView textView5 = (TextView) view.findViewById(R.id.tv_emblem);
+            if (Constant.tipe_sub_user.equals("5")) {
+                textView5.setText("Senior Manager");
+            } else {
+                textView5.setText("Manager");
+            }
+        }
+        return view;
+    }
+}

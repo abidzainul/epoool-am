@@ -1,0 +1,94 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text1"
+        android:textColor="@color/app_green"
+        android:text="1. KLAIM CURAH"/>
+
+    <LinearLayout
+        android:id="@+id/ll_no_klaim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="5dp"
+        android:background="@drawable/selectable_dark"
+        android:orientation="vertical">
+        <CheckBox
+            android:id="@+id/cb_no_klaim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/bpblack"
+            android:buttonTint="@color/app_green"
+            android:focusable="false"
+            android:clickable="false"
+            android:text="Tidak ada klaim" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_qty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_alignBottom="@+id/sign2"
+        android:textColorHint="@color/grey"
+        android:hint="Jumlah yang diterima">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_qty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/bpblack"
+            android:inputType="number"
+            android:backgroundTint="@color/grey"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_lanjut_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_save"
+            android:gravity="center_vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/tv_close"
+                style="@style/TextContentWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LANJUT" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_kembali_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_grey"
+            android:padding="5dp"
+            android:text="KEMBALI"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text2" />
+
+    </RelativeLayout>
+
+</LinearLayout>

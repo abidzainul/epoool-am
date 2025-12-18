@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EPOOOL Area Manager SIG</string>
+    <string name="masuk_big">MASUK</string>
+    <string name="sandi">Sandi</string>
+    <string name="save_label">Done</string> <string name="username">Nama Pengguna</string>
+    <string name="submit">Submit</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+</resources>

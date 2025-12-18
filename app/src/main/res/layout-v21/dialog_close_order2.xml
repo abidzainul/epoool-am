@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text1"
+        android:textColor="@color/app_green"
+        android:text="3. TANDA TANGAN PENERIMA"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/round_border_green"
+        android:layout_marginTop="20dp">
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            android:id="@+id/sign2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+        </com.github.gcacace.signaturepad.views.SignaturePad>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@color/grey"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignBottom="@+id/sign2"
+            android:textColorHint="@color/grey"
+            android:hint="Nama Penerima">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bpblack"
+                android:inputType="text"
+                android:backgroundTint="@color/grey"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_lanjut_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_save"
+            android:gravity="center_vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:textColor="#fff"
+                android:textSize="@dimen/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LANJUT" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_kembali_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_grey"
+            android:padding="5dp"
+            android:text="KEMBALI"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text1" />
+
+    </RelativeLayout>
+
+</LinearLayout>
