@@ -3,9 +3,12 @@ package com.epoool.approvalepoool.REST;
 import androidx.core.app.NotificationCompat;
 import com.epoool.approvalepoool.Models.AlasanModel;
 import com.epoool.approvalepoool.Models.DeliveryOrderModel;
+import com.epoool.approvalepoool.Models.DeliveryRequestRes;
 import com.epoool.approvalepoool.Models.InsertUpdateModel;
 import com.epoool.approvalepoool.Models.PengalihanModel;
 import com.epoool.approvalepoool.Models.ReceiverModel;
+import com.epoool.approvalepoool.Models.SalesOrder;
+import com.epoool.approvalepoool.Models.SalesOrderRes;
 import com.epoool.approvalepoool.Models.SearchModel;
 import com.epoool.approvalepoool.Models.UserLoginModel;
 import io.reactivex.Observable;
@@ -50,4 +53,12 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("mobile/pengalihan/api_pengalihan/update_pengalihan_v2")
     Observable<InsertUpdateModel> updateStatusPengalihan(@Field("id_username") String str, @Field("token_fcm") String str2, @Field("id_pengalihan") String str3, @Field(NotificationCompat.CATEGORY_STATUS) String str4);
+
+    @FormUrlEncoded
+    @POST("mobile/originator/Delivery_request/get_so")
+    Observable<SalesOrderRes> getSalesOrder(@Field("token") String str1, @Field("kd_plant") String str2, @Field("date_from") String str3, @Field("date_to") String str4);
+
+    @FormUrlEncoded
+    @POST("mobile/originator/Delivery_request/get_delivery_request")
+    Observable<DeliveryRequestRes> getDeliveryRequest(@Field("token") String str1, @Field("no_so") String str2, @Field("line_so") String str3);
 }

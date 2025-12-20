@@ -6,7 +6,6 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-/* loaded from: classes.dex */
 public class GsonConverter<T> {
     static Type getSuperclassTypeParameter(Class<?> cls) {
         Type genericSuperclass = cls.getGenericSuperclass();
@@ -17,7 +16,7 @@ public class GsonConverter<T> {
     }
 
     public String toJsonString(Object obj) {
-        return new Gson().toJson(obj, new TypeToken<T>() { // from class: com.epoool.approvalepoool.Utils.GsonConverter.1
+        return new Gson().toJson(obj, new TypeToken<T>() { 
         }.getType());
     }
 

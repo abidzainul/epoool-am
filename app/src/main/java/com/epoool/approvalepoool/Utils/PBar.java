@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-/* loaded from: classes.dex */
 public class PBar {
     private ProgressBar progressbar;
     private View view;

@@ -57,7 +57,7 @@
             android:name=".Views.DetailPengalihanActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Views.RequestSOActivity"
+            android:name=".Views.DeliveryRequestActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".Views.LoginActivity"

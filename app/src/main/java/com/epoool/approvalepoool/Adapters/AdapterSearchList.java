@@ -11,7 +11,6 @@ import com.epoool.approvalepoool.Models.SearchModel;
 import com.epoool.approvalepoool.R;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class AdapterSearchList extends RecyclerView.Adapter<AdapterSearchList.CustomViewHolder> {
     private List<SearchModel> data;
     OnListClickListener itemListener;
@@ -41,12 +40,12 @@ public class AdapterSearchList extends RecyclerView.Adapter<AdapterSearchList.Cu
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new CustomViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_dialog, viewGroup, false));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public void onBindViewHolder(CustomViewHolder customViewHolder, final int i) {
         int i2 = this.tipe;
         if (i2 == 1) {
@@ -54,8 +53,8 @@ public class AdapterSearchList extends RecyclerView.Adapter<AdapterSearchList.Cu
         } else if (i2 == 2) {
             customViewHolder.item_list.setText(this.data.get(i).getNoSpj());
         }
-        customViewHolder.linear_item.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Adapters.AdapterSearchList.1
-            @Override // android.view.View.OnClickListener
+        customViewHolder.linear_item.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 if (tipe == 1) {
                     itemListener.onClicked(((SearchModel) data.get(i)).getNoReferensi(), i);
@@ -66,7 +65,7 @@ public class AdapterSearchList extends RecyclerView.Adapter<AdapterSearchList.Cu
         });
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public int getItemCount() {
         return this.data.size();
     }

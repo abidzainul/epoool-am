@@ -4,7 +4,6 @@ import com.google.firebase.messaging.Constants;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/* loaded from: classes.dex */
 public class DeliveryOrderModel {
 
     @SerializedName("alamat_receiver")

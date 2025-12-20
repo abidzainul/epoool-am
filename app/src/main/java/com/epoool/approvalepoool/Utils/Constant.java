@@ -6,7 +6,6 @@ import com.epoool.approvalepoool.R;
 import com.epoool.approvalepoool.REST.ApiClient;
 import com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer;
 
-/* loaded from: classes.dex */
 public class Constant {
     public static String IMEI;
     public static AdapterListViewDrawer adapterListViewDrawer;
@@ -32,7 +31,7 @@ public class Constant {
     public static int width;
 
     static {
-        baseUrl = ApiClient.DEV ? "http://10.15.3.242/dev/" : "https://app.epoool.id/";
+        baseUrl = ApiClient.DEV ? "http://10.0.2.2/" : "https://app.epoool.id/";
         url = baseUrl + "index.php/mobile/pengalihan/api_pengalihan/";
         newUrl = baseUrl + "index.php/mobile/baru_15042020/api_driver/";
         urlImageOriginator = baseUrl + "berkas/foto_user/originator/";

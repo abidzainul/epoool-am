@@ -24,7 +24,6 @@ import com.epoool.approvalepoool.Utils.GsonConverter;
 import com.epoool.approvalepoool.Views.LoginPresenter;
 import java.util.UUID;
 
-/* loaded from: classes.dex */
 public class LoginActivity extends AppCompatActivity implements LoginPresenter.ViewLogin {
     Button btnLogin;
     private Context context;
@@ -35,7 +34,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.V
     TextView tvFordev;
     TextView tvVersion;
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    @Override 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_login);
@@ -63,8 +62,8 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.V
         this.etPassword.getBackground().mutate().setColorFilter(-1, PorterDuff.Mode.SRC_ATOP);
         cekLogin();
         this.presenter = new LoginPresenter(this);
-        this.btnLogin.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.LoginActivity.1
-            @Override // android.view.View.OnClickListener
+        this.btnLogin.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 if (etUsername.getText().toString().equals("") || etPassword.getText().toString().equals("")) {
                     Function.snackBarRed(context, "Mohon lengkapi semua field di atas");
@@ -89,13 +88,13 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.V
             Constant.token_fcm = sharedPreferences.getString("token_fcm", "");
             Constant.tipe_sub_user = sharedPreferences.getString("tipe_sub_user", "");
             Constant.token = sharedPreferences.getString("token", "");
-            UserLoginModel jsonObject = new GsonConverter<UserLoginModel>() { // from class: com.epoool.approvalepoool.Views.LoginActivity.2
+            UserLoginModel jsonObject = new GsonConverter<UserLoginModel>() { 
             }.toJsonObject(sharedPreferences.getString("user_model_string", "{}"));
             Constant.modelUser = new UserLoginModel();
             Constant.modelUser.setUsername(jsonObject.getUsername());
             Constant.modelUser.setEmail(jsonObject.getEmail());
             Constant.modelUser.setNoHp(jsonObject.getNoHp());
-            startActivity(new Intent(this, (Class<?>) MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
             Function.openAct(this);
         }
@@ -105,13 +104,13 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.V
         return !sharedPreferences.getString("token_fcm", "").equals("");
     }
 
-    @Override // androidx.activity.ComponentActivity, android.app.Activity
+    @Override 
     public void onBackPressed() {
         super.onBackPressed();
         Function.closeAct(this);
     }
 
-    @Override // com.epoool.approvalepoool.Views.LoginPresenter.ViewLogin
+    @Override 
     public void afterLogin(UserLoginModel userLoginModel, int i, String str, String str2) {
         if (i == 1) {
             Constant.idUsername = userLoginModel.getIdUsername();
@@ -134,7 +133,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.V
             sharedPreferences.edit().putString("id_username", userLoginModel.getIdUsername()).apply();
             sharedPreferences.edit().putString("user_model_string", jsonString).apply();
             Function.sendToken(this);
-            startActivity(new Intent(this, (Class<?>) MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
             Function.openAct(this);
             return;

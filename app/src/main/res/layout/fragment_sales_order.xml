@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPlant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#08000000"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp">
+            <EditText
+                android:id="@+id/etPlant"
+                android:background="@android:color/transparent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Kode Plant"
+                android:layout_weight="1"
+                android:inputType="textAutoCorrect"
+                android:imeOptions="actionSearch"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearDate"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDateStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="#08000000"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+                <EditText
+                    android:id="@+id/etDateStart"
+                    android:background="@android:color/transparent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="From"
+                    android:layout_weight="1"
+                    android:inputType="textAutoCorrect"
+                    android:imeOptions="actionSearch"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDateEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#08000000"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+                <EditText
+                    android:id="@+id/etDateEnd"
+                    android:background="@android:color/transparent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="To"
+                    android:layout_weight="1"
+                    android:inputType="textAutoCorrect"
+                    android:imeOptions="actionSearch"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:baselineAligned="false"
+        android:paddingHorizontal="16dp"
+        android:gravity="end|center_vertical">
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/round_blue_button"
+            android:textColor="@android:color/white"
+            android:text="Search"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_kosong"
+            android:padding="30dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Anda tidak memiliki permintaan pengajuan"/>
+
+        <com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout
+            android:id="@+id/srl_temp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_pengalihan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout>
+    </RelativeLayout>
+
+</LinearLayout>

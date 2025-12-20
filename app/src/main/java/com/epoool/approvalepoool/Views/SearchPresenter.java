@@ -11,7 +11,6 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class SearchPresenter {
     private ApiInterface apiInterface = (ApiInterface) ApiClient.getClient().create(ApiInterface.class);
     private ViewListSearch view;
@@ -25,21 +24,21 @@ public class SearchPresenter {
     }
 
     public void loadSearchReceiver(String str) {
-        this.apiInterface.getSearchReceiver(Constant.idUsername, Constant.token_fcm, Constant.idReference, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<SearchModel>() { // from class: com.epoool.approvalepoool.Views.SearchPresenter.1
-            @Override // io.reactivex.Observer
+        this.apiInterface.getSearchReceiver(Constant.idUsername, Constant.token_fcm, Constant.idReference, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<SearchModel>() { 
+            @Override 
             public void onComplete() {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onSubscribe(Disposable disposable) {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onNext(SearchModel searchModel) {
                 view.showSearch(searchModel.getData(), searchModel.getCode().intValue(), searchModel.getPesan());
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onError(Throwable th) {
                 view.showSearch(new ArrayList(), 0, Constant.warningNoConnection);
             }
@@ -47,21 +46,21 @@ public class SearchPresenter {
     }
 
     public void loadSearchSPJ(String str) {
-        this.apiInterface.getSearchSPJ(Constant.idUsername, Constant.token_fcm, Constant.idReference, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<SearchModel>() { // from class: com.epoool.approvalepoool.Views.SearchPresenter.2
-            @Override // io.reactivex.Observer
+        this.apiInterface.getSearchSPJ(Constant.idUsername, Constant.token_fcm, Constant.idReference, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<SearchModel>() { 
+            @Override 
             public void onComplete() {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onSubscribe(Disposable disposable) {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onNext(SearchModel searchModel) {
                 view.showSearch(searchModel.getData(), searchModel.getCode().intValue(), searchModel.getPesan());
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onError(Throwable th) {
                 view.showSearch(new ArrayList(), 0, Constant.warningNoConnection);
             }

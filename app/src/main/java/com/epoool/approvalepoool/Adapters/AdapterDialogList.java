@@ -11,7 +11,6 @@ import com.epoool.approvalepoool.Models.AlasanModel;
 import com.epoool.approvalepoool.R;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class AdapterDialogList extends RecyclerView.Adapter<AdapterDialogList.CustomViewHolder> {
     private List<AlasanModel> data;
     OnListClickListener itemListener;
@@ -39,23 +38,23 @@ public class AdapterDialogList extends RecyclerView.Adapter<AdapterDialogList.Cu
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new CustomViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_dialog, viewGroup, false));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
         customViewHolder.item_list.setText(this.data.get(i).getAlasanId());
-        customViewHolder.linear_item.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Adapters.AdapterDialogList.1
-            @Override // android.view.View.OnClickListener
+        customViewHolder.linear_item.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 itemListener.onClicked(((AlasanModel) data.get(i)).getAlasanId(), ((AlasanModel) data.get(i)).getId());
             }
         });
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public int getItemCount() {
         return this.data.size();
     }

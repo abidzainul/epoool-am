@@ -29,7 +29,6 @@ import com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* loaded from: classes.dex */
 public class MainActivity extends AppCompatActivity {
     public static Context context;
     public static DrawerLayout mDrawerLayout;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mTitle;
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    @Override 
     protected void onCreate(Bundle bundle) throws Resources.NotFoundException {
         super.onCreate(bundle);
         setContentView(R.layout.activity_main);
@@ -54,30 +53,32 @@ public class MainActivity extends AppCompatActivity {
         Function.getFragment(this, new ListPengalihanFragment(), Constant.holderFragment);
     }
 
-    private void isiDrawer(Toolbar toolbar) throws Resources.NotFoundException {
+    private void isiDrawer(Toolbar toolbar) {
         ArrayList arrayList = new ArrayList();
         if (Constant.tipe_sub_user.equals("5")) {
             arrayList.add("1");
             arrayList.add("0");
             arrayList.add("6");
+            arrayList.add("9");
             arrayList.add(ExifInterface.GPS_MEASUREMENT_3D);
         } else {
             arrayList.add("1");
             arrayList.add("0");
             arrayList.add("7");
             arrayList.add("6");
+            arrayList.add("9");
             arrayList.add(ExifInterface.GPS_MEASUREMENT_3D);
         }
         Constant.adapterListViewDrawer = new AdapterListViewDrawer(this, arrayList);
         this.lvDrawer.setAdapter((ListAdapter) Constant.adapterListViewDrawer);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) { // from class: com.epoool.approvalepoool.Views.1
-            @Override // androidx.appcompat.app.ActionBarDrawerToggle, androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) { 
+            @Override 
             public void onDrawerClosed(View view) {
                 getSupportActionBar().setTitle(mTitle);
                 invalidateOptionsMenu();
             }
 
-            @Override // androidx.appcompat.app.ActionBarDrawerToggle, androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+            @Override 
             public void onDrawerOpened(View view) {
                 getSupportActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu();
@@ -87,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
         this.mDrawerToggle.setDrawerIndicatorEnabled(false);
         this.mDrawerToggle.setHomeAsUpIndicator(ResourcesCompat.getDrawable(getResources(), R.drawable.menu_putih, getTheme()));
-        this.mDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.2
-            @Override // android.view.View.OnClickListener
+        this.mDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 if (mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
                     mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -101,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void logOut(final SharedPreferences sharedPreferences) {
-        DialogHelper.showWithDoubleButton(context, "Log Out", "Apakah Anda yakin ingin log out?", "Ya", "Tidak", new Runnable() { // from class: com.epoool.approvalepoool.Views.3
-            @Override // java.lang.Runnable
+        DialogHelper.showWithDoubleButton(context, "Log Out", "Apakah Anda yakin ingin log out?", "Ya", "Tidak", new Runnable() { 
+            @Override 
             public void run() {
                 requestLogOut(sharedPreferences);
             }
@@ -113,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
         OkHttpHelper okHttpHelper = new OkHttpHelper();
         final AlertDialog alertDialogCreate = new AlertDialog.Builder(context).setView(R.layout.dialog_progress_bar).create();
         alertDialogCreate.show();
-        Runnable runnable = new Runnable() { // from class: com.epoool.approvalepoool.Views.4
-            @Override // java.lang.Runnable
+        Runnable runnable = new Runnable() { 
+            @Override 
             public void run() {
                 alertDialogCreate.dismiss();
                 sharedPreferences.edit().clear().apply();
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 if (Constant.intentService != null) {
                     context.stopService(Constant.intentService);
                 }
-                context.startActivity(new Intent(context, (Class<?>) LoginActivity.class));
+                context.startActivity(new Intent(context, LoginActivity.class));
                 Function.openAct(context);
                 ((Activity) context).finish();
             }
@@ -132,15 +133,15 @@ public class MainActivity extends AppCompatActivity {
         okHttpHelper.posting(context, Constant.url + "logout", Function.paramAdderPost(new HashMap()), runnable, false, (RelativeLayout) null, (View) null);
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
+    @Override 
     protected void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // androidx.activity.ComponentActivity, android.app.Activity
+    @Override 
     public void onBackPressed() {
-        DialogHelper.showWithDoubleButton(context, "Keluar", "Apakah anda yakin ingin keluar?", "Ya", "Tidak", new Runnable() { // from class: com.epoool.approvalepoool.Views.5
-            @Override // java.lang.Runnable
+        DialogHelper.showWithDoubleButton(context, "Keluar", "Apakah anda yakin ingin keluar?", "Ya", "Tidak", new Runnable() { 
+            @Override 
             public void run() {
                 finish();
                 Function.closeAct(context);
@@ -148,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    @Override 
     protected void onDestroy() {
         super.onDestroy();
         if (Constant.intentQueue != null) {
@@ -156,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override // android.app.Activity
+    @Override 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (this.mDrawerToggle.onOptionsItemSelected(menuItem)) {
             return true;
@@ -164,24 +165,24 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(menuItem);
     }
 
-    @Override // android.app.Activity
+    @Override 
     public void setTitle(int i) {
         setTitle(getString(i));
     }
 
-    @Override // android.app.Activity
+    @Override 
     public void setTitle(CharSequence charSequence) {
         this.mTitle = charSequence;
         getSupportActionBar().setTitle(this.mTitle);
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, android.app.Activity
+    @Override 
     protected void onPostCreate(Bundle bundle) {
         super.onPostCreate(bundle);
         this.mDrawerToggle.syncState();
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity, android.content.ComponentCallbacks
+    @Override 
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         this.mDrawerToggle.onConfigurationChanged(configuration);

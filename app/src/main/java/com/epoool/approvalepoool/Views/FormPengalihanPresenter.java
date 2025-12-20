@@ -14,7 +14,6 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class FormPengalihanPresenter {
     private ApiInterface apiInterface = (ApiInterface) ApiClient.getClient().create(ApiInterface.class);
     private ViewFormPengalihan view;
@@ -34,21 +33,21 @@ public class FormPengalihanPresenter {
     }
 
     public void loadDataResi(String str) {
-        this.apiInterface.getDObyResi(Constant.idUsername, Constant.token_fcm, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<DeliveryOrderModel>() { // from class: com.epoool.approvalepoool.Views.FormPengalihanPresenter.1
-            @Override // io.reactivex.Observer
+        this.apiInterface.getDObyResi(Constant.idUsername, Constant.token_fcm, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<DeliveryOrderModel>() { 
+            @Override 
             public void onComplete() {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onSubscribe(Disposable disposable) {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onNext(DeliveryOrderModel deliveryOrderModel) {
                 view.showDataResi(deliveryOrderModel.getData(), deliveryOrderModel.getCode().intValue(), deliveryOrderModel.getPesan());
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onError(Throwable th) {
                 view.showDataResi(new DeliveryOrderModel(), 0, Constant.warningNoConnection);
             }
@@ -56,21 +55,21 @@ public class FormPengalihanPresenter {
     }
 
     public void loadDataReceiver(String str) {
-        this.apiInterface.getReceiver(Constant.idUsername, Constant.token_fcm, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<ReceiverModel>() { // from class: com.epoool.approvalepoool.Views.FormPengalihanPresenter.2
-            @Override // io.reactivex.Observer
+        this.apiInterface.getReceiver(Constant.idUsername, Constant.token_fcm, str).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<ReceiverModel>() { 
+            @Override 
             public void onComplete() {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onSubscribe(Disposable disposable) {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onNext(ReceiverModel receiverModel) {
                 view.showDataReceiver(receiverModel.getData(), receiverModel.getCode().intValue(), receiverModel.getPesan());
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onError(Throwable th) {
                 view.showDataReceiver(new ReceiverModel(), 0, Constant.warningNoConnection);
             }
@@ -78,21 +77,21 @@ public class FormPengalihanPresenter {
     }
 
     public void sendPengalihan(String str, String str2, String str3) {
-        this.apiInterface.insertPengalihan(Constant.idUsername, Constant.token_fcm, str, str2, str3).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<InsertUpdateModel>() { // from class: com.epoool.approvalepoool.Views.FormPengalihanPresenter.3
-            @Override // io.reactivex.Observer
+        this.apiInterface.insertPengalihan(Constant.idUsername, Constant.token_fcm, str, str2, str3).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<InsertUpdateModel>() { 
+            @Override 
             public void onComplete() {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onSubscribe(Disposable disposable) {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onNext(InsertUpdateModel insertUpdateModel) {
                 view.afterInsert(insertUpdateModel.getCode().intValue(), insertUpdateModel.getPesan());
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onError(Throwable th) {
                 view.afterInsert(0, Constant.warningNoConnection);
             }
@@ -100,21 +99,21 @@ public class FormPengalihanPresenter {
     }
 
     public void loadAlasan() {
-        this.apiInterface.getAlasan(Constant.token_fcm, Constant.idReference, "1").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<AlasanModel>() { // from class: com.epoool.approvalepoool.Views.FormPengalihanPresenter.4
-            @Override // io.reactivex.Observer
+        this.apiInterface.getAlasan(Constant.token_fcm, Constant.idReference, "1").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<AlasanModel>() { 
+            @Override 
             public void onComplete() {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onSubscribe(Disposable disposable) {
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onNext(AlasanModel alasanModel) {
                 view.showAlasan(alasanModel.getData(), alasanModel.getCode().intValue(), alasanModel.getPesan());
             }
 
-            @Override // io.reactivex.Observer
+            @Override 
             public void onError(Throwable th) {
                 view.showAlasan(new ArrayList(), 0, Constant.warningNoConnection);
             }

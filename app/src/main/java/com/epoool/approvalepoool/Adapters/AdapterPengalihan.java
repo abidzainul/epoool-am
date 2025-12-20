@@ -13,7 +13,6 @@ import com.epoool.approvalepoool.Utils.Function;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class AdapterPengalihan extends RecyclerView.Adapter<AdapterPengalihan.ViewHolder> {
     private Context context;
     private List<PengalihanModel> list;
@@ -34,12 +33,12 @@ public class AdapterPengalihan extends RecyclerView.Adapter<AdapterPengalihan.Vi
         this.mListener = listener;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_pengalihan, viewGroup, false));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public void onBindViewHolder(ViewHolder viewHolder, final int i) {
         PengalihanModel pengalihanModel = this.list.get(i);
         if (pengalihanModel.getStatusApproval().equals("0")) {
@@ -63,15 +62,15 @@ public class AdapterPengalihan extends RecyclerView.Adapter<AdapterPengalihan.Vi
         viewHolder.tvResi.setText(pengalihanModel.getNoSpj());
         viewHolder.tvDist.setText(pengalihanModel.getNamaDistributor() + " (" + pengalihanModel.getKdDistributor() + ")");
         viewHolder.tvGudang.setText(pengalihanModel.getNamaGudang() + " (" + pengalihanModel.getKdGudang() + ")");
-        viewHolder.view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Adapters.AdapterPengalihan.1
-            @Override // android.view.View.OnClickListener
+        viewHolder.view.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 mListener.onItemClick(i);
             }
         });
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override 
     public int getItemCount() {
         return this.list.size();
     }

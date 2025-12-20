@@ -30,7 +30,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class FormPengalihanFragment extends Fragment implements FormPengalihanPresenter.ViewFormPengalihan {
     String alasanString;
     private Button btnCek1;
@@ -57,12 +56,12 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
     private TextView tvNorefAwal;
     private TextView tvShiptoAwal;
 
-    @Override // androidx.fragment.app.Fragment
+    @Override 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // androidx.fragment.app.Fragment
+    @Override 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View viewInflate = layoutInflater.inflate(R.layout.fragment_form_pengalihan, viewGroup, false);
         getActivity().setTitle("Pengajuan Pengalihan");
@@ -85,8 +84,8 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         this.tilNoBooking = (TextInputLayout) viewInflate.findViewById(R.id.til_no_booking);
         this.context = getActivity();
         this.presenter = new FormPengalihanPresenter(this);
-        this.btnCek1.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.1
-            @Override // android.view.View.OnClickListener
+        this.btnCek1.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 if (!etNoBooking.getText().toString().equals("")) {
                     presenter.loadDataResi(etNoBooking.getText().toString());
@@ -95,8 +94,8 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
                 }
             }
         });
-        this.btnCek2.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.2
-            @Override // android.view.View.OnClickListener
+        this.btnCek2.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 if (!etNoShipto.getText().toString().equals("")) {
                     presenter.loadDataReceiver(etNoShipto.getText().toString());
@@ -105,35 +104,35 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
                 }
             }
         });
-        this.etNoShipto.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.3
-            @Override // android.view.View.OnClickListener
+        this.etNoShipto.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
-                Intent intent = new Intent(context, (Class<?>) SearchActivity.class);
+                Intent intent = new Intent(context, SearchActivity.class);
                 intent.putExtra(FirebaseAnalytics.Event.SEARCH, etNoShipto.getText().toString());
                 intent.putExtra("tipe", 1);
                 startActivityForResult(intent, 1);
                 Function.openAct(context);
             }
         });
-        this.etNoBooking.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.4
-            @Override // android.view.View.OnClickListener
+        this.etNoBooking.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
-                Intent intent = new Intent(context, (Class<?>) SearchActivity.class);
+                Intent intent = new Intent(context, SearchActivity.class);
                 intent.putExtra(FirebaseAnalytics.Event.SEARCH, etNoBooking.getText().toString());
                 intent.putExtra("tipe", 2);
                 startActivityForResult(intent, 2);
                 Function.openAct(context);
             }
         });
-        this.tvButton.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.5
-            @Override // android.view.View.OnClickListener
+        this.tvButton.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 showProgressDialog();
                 presenter.loadAlasan();
             }
         });
-        this.btnSubmit.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.6
-            @Override // android.view.View.OnClickListener
+        this.btnSubmit.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 if (resi == null || id_receiver == null || idAlasan == null) {
                     if (resi == null) {
@@ -181,15 +180,15 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         textView7.setText(str7);
         button.setText(str8);
         button2.setText(str9);
-        button.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.7
-            @Override // android.view.View.OnClickListener
+        button.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 dialog.dismiss();
                 presenter.sendPengalihan(resi, id_receiver, idAlasan);
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.8
-            @Override // android.view.View.OnClickListener
+        button2.setOnClickListener(new View.OnClickListener() { 
+            @Override 
             public void onClick(View view) {
                 dialog.dismiss();
             }
@@ -213,7 +212,7 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         return alertDialogCreate;
     }
 
-    @Override // androidx.fragment.app.Fragment
+    @Override 
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -239,7 +238,7 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         }
     }
 
-    @Override // com.epoool.approvalepoool.Views.FormPengalihanPresenter.ViewFormPengalihan
+    @Override 
     public void showDataResi(DeliveryOrderModel deliveryOrderModel, int i, String str) {
         hideProgressDialog();
         if (i == 1) {
@@ -254,7 +253,7 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         Toast.makeText(this.context, str, Toast.LENGTH_SHORT).show();
     }
 
-    @Override // com.epoool.approvalepoool.Views.FormPengalihanPresenter.ViewFormPengalihan
+    @Override 
     public void showDataReceiver(ReceiverModel receiverModel, int i, String str) {
         hideProgressDialog();
         if (i == 1) {
@@ -271,7 +270,7 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         Toast.makeText(this.context, str, Toast.LENGTH_SHORT).show();
     }
 
-    @Override // com.epoool.approvalepoool.Views.FormPengalihanPresenter.ViewFormPengalihan
+    @Override 
     public void afterInsert(int i, String str) {
         hideProgressDialog();
         if (i == 1) {
@@ -298,14 +297,14 @@ public class FormPengalihanFragment extends Fragment implements FormPengalihanPr
         Toast.makeText(this.context, str, Toast.LENGTH_SHORT).show();
     }
 
-    @Override // com.epoool.approvalepoool.Views.FormPengalihanPresenter.ViewFormPengalihan
+    @Override 
     public void showAlasan(List<AlasanModel> list, int i, String str) {
         hideProgressDialog();
         if (i == 1) {
             AdapterDialogList adapterDialogList = new AdapterDialogList(list, this.context);
             final AlertDialog dialogList = getDialogList(adapterDialogList, "Pilih Alasan");
-            adapterDialogList.setOnItemClickListener(new AdapterDialogList.OnListClickListener() { // from class: com.epoool.approvalepoool.Views.FormPengalihanFragment.9
-                @Override // com.epoool.approvalepoool.Adapters.AdapterDialogList.OnListClickListener
+            adapterDialogList.setOnItemClickListener(new AdapterDialogList.OnListClickListener() { 
+                @Override 
                 public void onClicked(String str2, String str3) {
                     alasanString = str2;
                     tvButton.setText("Alasan: " + alasanString);

@@ -1,9 +1,7 @@
 package com.epoool.approvalepoool.Models;
 
-/* loaded from: classes.dex */
 public class ModelDrawer {
 
-    /* renamed from: id, reason: collision with root package name */
     private String f4id;
     private String itemDrawer;
 

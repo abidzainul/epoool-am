@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_tanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="0dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Tanggal"
+                    android:textColor="#000"
+                    android:textSize="@dimen/text2"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_distibutor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="@dimen/text2"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/tv_jenis_muatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="0dp"
+                    android:textColor="#000"
+                    android:textSize="@dimen/text2" />
+
+                <TextView
+                    android:id="@+id/tv_qty_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tv_double_dot_item"
+                    android:textColor="#000"
+                    android:textSize="@dimen/text2"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_qty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="20"
+                    android:textColor="#000"
+                    android:textSize="@dimen/text2"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingTop="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_asal_item_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_from"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/dot_green" />
+
+                    <TextView
+                        android:id="@+id/tv_nama_gudang_item_delivery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/iv_from"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="Dari:"
+                        android:textColor="@color/app_green"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text3" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_dot"
+                    android:layout_width="12dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/rl_asal_item_delivery"
+                    android:src="@drawable/dot_vertical_3"
+                    card_view:tint="@color/app_green" />
+
+                <ImageView
+                    android:id="@+id/iv_dot2"
+                    android:layout_width="12dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/iv_dot"
+                    android:src="@drawable/dot_vertical_3"
+                    card_view:tint="@color/yellow" />
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_jam"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/rl_asal_item_delivery"-->
+<!--                    android:layout_toRightOf="@+id/iv_dot"-->
+<!--                    android:background="@drawable/round_orange_extreme"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:paddingBottom="2dp"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingRight="10dp"-->
+<!--                    android:paddingTop="2dp">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_from"-->
+<!--                        style="@style/TextSmallWhite"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Gresik"-->
+<!--                        android:textSize="@dimen/text4" />-->
+
+<!--                </LinearLayout>-->
+
+                <TextView
+                    android:id="@+id/tv_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_asal_item_delivery"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_dot"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text=""
+                    android:textColor="@color/material_grey_700"
+                    android:textSize="@dimen/text3" />
+
+                <TextView
+                    android:id="@+id/tv_address_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_from"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_dot"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text=""
+                    android:textColor="@color/material_grey_700"
+                    android:textSize="@dimen/text3" />
+
+                <RelativeLayout
+                    android:id="@+id/ll_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_below="@+id/iv_dot2">
+
+                    <ImageView
+                        android:id="@+id/iv_to"
+                        android:layout_width="12dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="1.5dp"
+                        android:src="@drawable/dot_orange" />
+
+                    <TextView
+                        android:id="@+id/tv_to_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/iv_to"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="Tujuan:"
+                        android:textColor="@color/yellow"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text3" />
+
+                </RelativeLayout>
+
+<!--                <LinearLayout-->
+<!--                    android:visibility="visible"-->
+<!--                    android:id="@+id/ll_jam2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/ll_bottom"-->
+<!--                    android:background="@drawable/round_orange_extreme"-->
+<!--                    android:layout_toRightOf="@+id/iv_dot"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:paddingBottom="2dp"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingRight="10dp"-->
+<!--                    android:paddingTop="2dp">-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_to"-->
+<!--                        style="@style/TextSmallWhite"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Tuban"-->
+<!--                        android:textSize="@dimen/text4" />-->
+<!--                </LinearLayout>-->
+
+                <TextView
+                    android:id="@+id/tv_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_dot"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text=""
+                    android:textColor="@color/material_grey_700"
+                    android:textSize="@dimen/text3" />
+
+                <TextView
+                    android:id="@+id/tv_address_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_to"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_dot"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/material_grey_700"
+                    android:textSize="@dimen/text3" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:gravity="end|center_vertical">
+
+                <Button
+                    android:id="@+id/btnRequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingHorizontal="20dp"
+                    android:background="@drawable/round_green_button"
+                    android:textColor="@android:color/white"
+                    android:text="Request"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

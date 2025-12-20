@@ -23,7 +23,6 @@ import okio.Buffer;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
 public class OkHttpHelper {
     private OkHttpClient client;
     public int code = 100;
@@ -45,7 +44,7 @@ public class OkHttpHelper {
             this.run = runnable;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected Object doInBackground(Object[] objArr) {
             OkHttpHelper.this.obj = null;
             try {
@@ -66,7 +65,7 @@ public class OkHttpHelper {
             return null;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected void onPostExecute(Object obj) {
             super.onPostExecute(obj);
             if (OkHttpHelper.this.pBar != null) {
@@ -91,7 +90,7 @@ public class OkHttpHelper {
             this.run = runnable;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected Object doInBackground(Object[] objArr) {
             OkHttpHelper.this.obj = null;
             try {
@@ -110,7 +109,7 @@ public class OkHttpHelper {
             return null;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected void onPostExecute(Object obj) {
             super.onPostExecute(obj);
             if (OkHttpHelper.this.obj != null) {
@@ -134,7 +133,7 @@ public class OkHttpHelper {
             this.run = runnable;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected Object doInBackground(Object[] objArr) {
             OkHttpHelper.this.obj = null;
             try {
@@ -164,7 +163,7 @@ public class OkHttpHelper {
             return null;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected void onPostExecute(Object obj) {
             super.onPostExecute(obj);
             if (OkHttpHelper.this.pBar != null) {
@@ -191,7 +190,7 @@ public class OkHttpHelper {
             this.run = runnable;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected Object doInBackground(Object[] objArr) {
             OkHttpHelper.this.obj = null;
             try {
@@ -221,7 +220,7 @@ public class OkHttpHelper {
             return null;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected void onPostExecute(Object obj) {
             super.onPostExecute(obj);
             if (OkHttpHelper.this.pBar != null) {
@@ -246,7 +245,7 @@ public class OkHttpHelper {
             this.run = runnable;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected Object doInBackground(Object[] objArr) {
             OkHttpHelper.this.obj = null;
             try {
@@ -276,7 +275,7 @@ public class OkHttpHelper {
             return null;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected void onPostExecute(Object obj) {
             super.onPostExecute(obj);
             if (OkHttpHelper.this.pBar != null) {
@@ -303,7 +302,7 @@ public class OkHttpHelper {
             this.run = runnable;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected Object doInBackground(Object[] objArr) {
             OkHttpHelper.this.obj = null;
             try {
@@ -333,7 +332,7 @@ public class OkHttpHelper {
             return null;
         }
 
-        @Override // android.os.AsyncTask
+        @Override 
         protected void onPostExecute(Object obj) {
             super.onPostExecute(obj);
             if (OkHttpHelper.this.pBar != null) {

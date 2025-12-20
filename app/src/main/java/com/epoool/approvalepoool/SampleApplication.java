@@ -2,9 +2,8 @@ package com.epoool.approvalepoool;
 
 import android.app.Application;
 
-/* loaded from: classes.dex */
 public class SampleApplication extends Application {
-    @Override // android.app.Application
+    @Override 
     public void onCreate() {
         super.onCreate();
     }

@@ -20,7 +20,6 @@ import com.epoool.approvalepoool.Views.SearchPresenter;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class SearchActivity extends AppCompatActivity implements SearchPresenter.ViewListSearch {
     Context context;
     EditText etSearch;
@@ -30,7 +29,7 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
     private Runnable runnableSearch = null;
     TextView tvKosong;
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    @Override 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_search);
@@ -57,24 +56,24 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
             }
         }
         this.handler = new Handler();
-        this.etSearch.addTextChangedListener(new TextWatcher() { // from class: com.epoool.approvalepoool.Views.SearchActivity.1
-            @Override // android.text.TextWatcher
+        this.etSearch.addTextChangedListener(new TextWatcher() { 
+            @Override 
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
 
-            @Override // android.text.TextWatcher
+            @Override 
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
 
-            @Override // android.text.TextWatcher
+            @Override 
             public void afterTextChanged(final Editable editable) {
                 if (editable.toString().length() >= 3) {
                     if (runnableSearch != null) {
                         handler.removeCallbacks(runnableSearch);
                         runnableSearch = null;
                     }
-                    runnableSearch = new Runnable() { // from class: com.epoool.approvalepoool.Views.SearchActivity.1.1
-                        @Override // java.lang.Runnable
+                    runnableSearch = new Runnable() { 
+                        @Override 
                         public void run() {
                             if (getIntent().getIntExtra("tipe", 0) == 1) {
                                 presenter.loadSearchReceiver(editable.toString());
@@ -93,7 +92,7 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
         });
     }
 
-    @Override // com.epoool.approvalepoool.Views.SearchPresenter.ViewListSearch
+    @Override 
     public void showSearch(List<SearchModel> list, int i, String str) {
         if (i == 1) {
             this.tvKosong.setVisibility(View.GONE);
@@ -102,8 +101,8 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
             this.rcList.setNestedScrollingEnabled(false);
             this.rcList.setLayoutManager(new LinearLayoutManager(this.context, RecyclerView.VERTICAL, false));
             this.rcList.setAdapter(adapterSearchList);
-            adapterSearchList.setOnItemClickListener(new AdapterSearchList.OnListClickListener() { // from class: com.epoool.approvalepoool.Views.SearchActivity.2
-                @Override // com.epoool.approvalepoool.Adapters.AdapterSearchList.OnListClickListener
+            adapterSearchList.setOnItemClickListener(new AdapterSearchList.OnListClickListener() { 
+                @Override 
                 public void onClicked(String str2, int i2) {
                     Intent intent = new Intent();
                     intent.putExtra(FirebaseAnalytics.Event.SEARCH, str2);

@@ -24,7 +24,6 @@ import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
 import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class HistoryPengalihanFragment extends Fragment implements ListPengalihanPresenter.ViewListPengalihan {
     private CardView cardCari;
     Context context;
@@ -35,7 +34,7 @@ public class HistoryPengalihanFragment extends Fragment implements ListPengaliha
     private SwipyRefreshLayout srl;
     private TextView tvKosong;
 
-    @Override // androidx.fragment.app.Fragment
+    @Override 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View viewInflate = layoutInflater.inflate(R.layout.fragment_list_pengalihan, viewGroup, false);
         this.rcPengalihan = (RecyclerView) viewInflate.findViewById(R.id.rc_pengalihan);
@@ -49,14 +48,14 @@ public class HistoryPengalihanFragment extends Fragment implements ListPengaliha
         this.cardCari.setVisibility(View.VISIBLE);
         this.presenter = new ListPengalihanPresenter(this);
         presenter.loadPengalihan("1#2", this.search);
-        this.srl.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() { // from class: com.epoool.approvalepoool.Views.HistoryPengalihanFragment.1
-            @Override // com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout.OnRefreshListener
+        this.srl.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() { 
+            @Override 
             public void onRefresh(SwipyRefreshLayoutDirection swipyRefreshLayoutDirection) {
                 presenter.loadPengalihan("1#2", search);
             }
         });
-        this.editSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.epoool.approvalepoool.Views.HistoryPengalihanFragment.2
-            @Override // android.widget.TextView.OnEditorActionListener
+        this.editSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() { 
+            @Override 
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == 3) {
                     srl.setRefreshing(true);
@@ -70,14 +69,14 @@ public class HistoryPengalihanFragment extends Fragment implements ListPengaliha
         return viewInflate;
     }
 
-    @Override // androidx.fragment.app.Fragment
+    @Override 
     public void onResume() {
         super.onResume();
         this.srl.setRefreshing(true);
         this.presenter.loadPengalihan("1#2", this.search);
     }
 
-    @Override // com.epoool.approvalepoool.Views.ListPengalihanPresenter.ViewListPengalihan
+    @Override 
     public void showPengalihan(final List<PengalihanModel> list, int i, String str) {
         this.srl.setRefreshing(false);
         if (i != 1 || list.size() == 0) {
@@ -85,11 +84,11 @@ public class HistoryPengalihanFragment extends Fragment implements ListPengaliha
         } else {
             this.tvKosong.setVisibility(View.GONE);
         }
-        this.rcPengalihan.setAdapter(new AdapterPengalihan(list, this.context, new AdapterPengalihan.Listener() { // from class: com.epoool.approvalepoool.Views.HistoryPengalihanFragment.3
-            @Override // com.epoool.approvalepoool.Adapters.AdapterPengalihan.Listener
+        this.rcPengalihan.setAdapter(new AdapterPengalihan(list, this.context, new AdapterPengalihan.Listener() { 
+            @Override 
             public void onItemClick(int i2) {
                 String jsonString = new GsonConverter().toJsonString(list.get(i2));
-                Intent intent = new Intent(context, (Class<?>) DetailPengalihanActivity.class);
+                Intent intent = new Intent(context, DetailPengalihanActivity.class);
                 intent.putExtra("pengalihan_string", jsonString);
                 context.startActivity(intent);
                 Function.openAct(context);

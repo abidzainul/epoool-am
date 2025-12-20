@@ -3,6 +3,7 @@ package com.epoool.approvalepoool.Utils.drawer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -15,21 +16,21 @@ import com.epoool.approvalepoool.Utils.Constant;
 import com.epoool.approvalepoool.Utils.Function;
 import com.epoool.approvalepoool.Views.FormPengalihanFragment;
 import com.epoool.approvalepoool.Views.HistoryPengalihanFragment;
+import com.epoool.approvalepoool.Views.ListSalesOrderFragment;
 import com.epoool.approvalepoool.Views.ListPengalihanFragment;
 import com.epoool.approvalepoool.Views.MainActivity;
 import java.util.ArrayList;
 
-/* loaded from: classes.dex */
 public class AdapterListViewDrawer extends BaseAdapter {
     private Context context;
     private ArrayList<String> list;
 
-    @Override // android.widget.Adapter
+    @Override 
     public Object getItem(int i) {
         return null;
     }
 
-    @Override // android.widget.Adapter
+    @Override 
     public long getItemId(int i) {
         return 0L;
     }
@@ -39,12 +40,12 @@ public class AdapterListViewDrawer extends BaseAdapter {
         this.list = arrayList;
     }
 
-    @Override // android.widget.Adapter
+    @Override 
     public int getCount() {
         return this.list.size();
     }
 
-    @Override // android.widget.Adapter
+    @Override 
     public View getView(int i, View view, ViewGroup viewGroup) {
         String str = this.list.get(i);
         if (str.equals("0")) {
@@ -53,8 +54,8 @@ public class AdapterListViewDrawer extends BaseAdapter {
             TextView textView = (TextView) view.findViewById(R.id.tv_logout_drawer);
             imageView.setImageResource(R.drawable.drawer_check);
             textView.setText("APPROVAL PENGALIHAN");
-            view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.1
-                @Override // android.view.View.OnClickListener
+            view.setOnClickListener(new View.OnClickListener() { 
+                @Override 
                 public void onClick(View view2) {
                     MainActivity.closeDrawer();
                     Function.getFragment(AdapterListViewDrawer.this.context, new ListPengalihanFragment(), Constant.holderFragment);
@@ -66,8 +67,8 @@ public class AdapterListViewDrawer extends BaseAdapter {
             TextView textView2 = (TextView) view.findViewById(R.id.tv_logout_drawer);
             imageView2.setImageResource(R.drawable.drawer_input);
             textView2.setText("PENGAJUAN PENGALIHAN");
-            view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.2
-                @Override // android.view.View.OnClickListener
+            view.setOnClickListener(new View.OnClickListener() { 
+                @Override 
                 public void onClick(View view2) {
                     MainActivity.closeDrawer();
                     Function.getFragment(AdapterListViewDrawer.this.context, new FormPengalihanFragment(), Constant.holderFragment);
@@ -79,10 +80,24 @@ public class AdapterListViewDrawer extends BaseAdapter {
             TextView textView3 = (TextView) view.findViewById(R.id.tv_logout_drawer);
             imageView3.setImageResource(R.drawable.drawer_history);
             textView3.setText("RIWAYAT PENGALIHAN");
-            view.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.3
-                @Override // android.view.View.OnClickListener
+            view.setOnClickListener(new View.OnClickListener() { 
+                @Override 
                 public void onClick(View view2) {
                     Function.getFragment(AdapterListViewDrawer.this.context, new HistoryPengalihanFragment(), Constant.holderFragment);
+                    MainActivity.mDrawerLayout.closeDrawer(GravityCompat.START);
+                }
+            });
+        } else if (str.equals("9")) {
+            view = ((Activity) this.context).getLayoutInflater().inflate(R.layout.item_drawer_direct, viewGroup, false);
+            ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_logout_drawer);
+            TextView textView3 = (TextView) view.findViewById(R.id.tv_logout_drawer);
+            imageView3.setImageResource(R.drawable.muatan);
+            imageView3.setColorFilter(Color.argb(250, 250, 250, 250));
+            textView3.setText("DELIVERY REQUEST");
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view2) {
+                    Function.getFragment(AdapterListViewDrawer.this.context, new ListSalesOrderFragment(), Constant.holderFragment);
                     MainActivity.mDrawerLayout.closeDrawer(GravityCompat.START);
                 }
             });
@@ -92,8 +107,8 @@ public class AdapterListViewDrawer extends BaseAdapter {
             TextView textView4 = (TextView) viewInflate.findViewById(R.id.tv_logout_drawer);
             ((ImageView) viewInflate.findViewById(R.id.iv_logout_drawer)).setImageResource(R.drawable.drawer_logout);
             textView4.setText("LOGOUT");
-            viewInflate.setOnClickListener(new View.OnClickListener() { // from class: com.epoool.approvalepoool.Utils.drawer.AdapterListViewDrawer.4
-                @Override // android.view.View.OnClickListener
+            viewInflate.setOnClickListener(new View.OnClickListener() { 
+                @Override 
                 public void onClick(View view2) {
                     MainActivity.closeDrawer();
                     MainActivity.logOut(sharedPreferences);
