@@ -1,4 +1,4 @@
-package com.epoool.approvalepoool.Views;
+package com.epoool.approvalepoool.Views.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat;
 
 import com.epoool.approvalepoool.R;
 
-public class ConfirmationDialog extends Dialog {
+public class DialogConfirm extends Dialog {
 
     private final Context context;
     private String title;
@@ -37,7 +37,7 @@ public class ConfirmationDialog extends Dialog {
         void onCancel();
     }
 
-    public ConfirmationDialog(Context context) {
+    public DialogConfirm(Context context) {
         super(context);
         this.context = context;
         this.confirmText = "Confirm";
@@ -108,37 +108,37 @@ public class ConfirmationDialog extends Dialog {
         setCanceledOnTouchOutside(false);
     }
 
-    public ConfirmationDialog setTitle(String title) {
+    public DialogConfirm setTitle(String title) {
         this.title = title;
         return this;
     }
 
-    public ConfirmationDialog setMessage(String message) {
+    public DialogConfirm setMessage(String message) {
         this.message = message;
         return this;
     }
 
-    public ConfirmationDialog setConfirmText(String confirmText) {
+    public DialogConfirm setConfirmText(String confirmText) {
         this.confirmText = confirmText;
         return this;
     }
 
-    public ConfirmationDialog setCancelText(String cancelText) {
+    public DialogConfirm setCancelText(String cancelText) {
         this.cancelText = cancelText;
         return this;
     }
 
-    public ConfirmationDialog setDialogType(DialogType dialogType) {
+    public DialogConfirm setDialogType(DialogType dialogType) {
         this.dialogType = dialogType;
         return this;
     }
 
-    public ConfirmationDialog setOnConfirmListener(OnConfirmListener onConfirmListener) {
+    public DialogConfirm setOnConfirmListener(OnConfirmListener onConfirmListener) {
         this.onConfirmListener = onConfirmListener;
         return this;
     }
 
-    public ConfirmationDialog setOnCancelListener(OnCancelListener onCancelListener) {
+    public DialogConfirm setOnCancelListener(OnCancelListener onCancelListener) {
         this.onCancelListener = onCancelListener;
         return this;
     }

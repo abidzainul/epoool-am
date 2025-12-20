@@ -20,6 +20,8 @@ import com.epoool.approvalepoool.Adapters.AdapterDeliveryRequest;
 import com.epoool.approvalepoool.Models.DeliveryRequest;
 import com.epoool.approvalepoool.Models.SalesOrder;
 import com.epoool.approvalepoool.R;
+import com.epoool.approvalepoool.Views.dialog.DialogConfirm;
+import com.epoool.approvalepoool.Views.dialog.DialogInfo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -177,10 +179,10 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
         this.recyclerView.setAdapter(new AdapterDeliveryRequest(new ArrayList<>(list), new AdapterDeliveryRequest.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position, DeliveryRequest data) {
-                new InfoDialog(DeliveryRequestActivity.this)
+                new DialogInfo(DeliveryRequestActivity.this)
                         .setTitle("Success!")
                         .setMessage("Data saved successfully")
-                        .setDialogType(InfoDialog.DialogType.SUCCESS)
+                        .setDialogType(DialogInfo.DialogType.SUCCESS)
                         .setButtonText("OKE")
                         .setOnOKListener(() -> {
                             // Action after OK clicked
@@ -190,10 +192,10 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
 
             @Override
             public void onDeleteClick(View v, int position, DeliveryRequest data) {
-                new ConfirmationDialog(DeliveryRequestActivity.this)
+                new DialogConfirm(DeliveryRequestActivity.this)
                         .setTitle("Delete Item")
                         .setMessage("Are you sure you want to delete this item?")
-                        .setDialogType(ConfirmationDialog.DialogType.ERROR)
+                        .setDialogType(DialogConfirm.DialogType.ERROR)
                         .setConfirmText("Delete")
                         .setCancelText("Cancel")
                         .setOnConfirmListener(() -> {
@@ -215,18 +217,18 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
             if (str == null) {
                 str = "Your delivery request has been submitted successfully!";
             }
-            new ConfirmationDialog(DeliveryRequestActivity.this)
+            new DialogConfirm(DeliveryRequestActivity.this)
                     .setTitle("Success")
                     .setMessage(str)
-                    .setDialogType(ConfirmationDialog.DialogType.SUCCESS)
+                    .setDialogType(DialogConfirm.DialogType.SUCCESS)
                     .setConfirmText("Done")
                     .setOnConfirmListener(this::finish)
                     .show();
         } else {
-            new ConfirmationDialog(DeliveryRequestActivity.this)
+            new DialogConfirm(DeliveryRequestActivity.this)
                     .setTitle("Error")
                     .setMessage(str)
-                    .setDialogType(ConfirmationDialog.DialogType.ERROR)
+                    .setDialogType(DialogConfirm.DialogType.ERROR)
                     .setConfirmText("Retry")
                     .setCancelText("Dismiss")
                     .setOnConfirmListener(() -> {

@@ -1,4 +1,4 @@
-package com.epoool.approvalepoool.Views;
+package com.epoool.approvalepoool.Views.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat;
 
 import com.epoool.approvalepoool.R;
 
-public class InfoDialog extends Dialog {
+public class DialogInfo extends Dialog {
 
     private final Context context;
     private String title;
@@ -32,7 +32,7 @@ public class InfoDialog extends Dialog {
         void onOK();
     }
 
-    public InfoDialog(Context context) {
+    public DialogInfo(Context context) {
         super(context);
         this.context = context;
         this.buttonText = "OKE";
@@ -96,27 +96,27 @@ public class InfoDialog extends Dialog {
     }
 
     // Builder methods for fluent API
-    public InfoDialog setTitle(String title) {
+    public DialogInfo setTitle(String title) {
         this.title = title;
         return this;
     }
 
-    public InfoDialog setMessage(String message) {
+    public DialogInfo setMessage(String message) {
         this.message = message;
         return this;
     }
 
-    public InfoDialog setButtonText(String buttonText) {
+    public DialogInfo setButtonText(String buttonText) {
         this.buttonText = buttonText;
         return this;
     }
 
-    public InfoDialog setDialogType(DialogType dialogType) {
+    public DialogInfo setDialogType(DialogType dialogType) {
         this.dialogType = dialogType;
         return this;
     }
 
-    public InfoDialog setOnOKListener(OnOKListener onOKListener) {
+    public DialogInfo setOnOKListener(OnOKListener onOKListener) {
         this.onOKListener = onOKListener;
         return this;
     }
