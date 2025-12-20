@@ -11,6 +11,7 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.http.Field;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +57,12 @@ public class DeliveryRequestPresenter {
                     }
                 });
     }
-    public void updateStatus(String str, String str2) {
-        this.apiInterface.updateStatusPengalihan(Constant.idUsername, Constant.token_fcm, str, str2).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<InsertUpdateModel>() {
+
+    public void saveData(String noSo, String lineSo, String qty, String dateSend, String note) {
+        this.apiInterface.saveDeliveryRequest(Constant.token_fcm, noSo, lineSo,
+                        qty, dateSend, note)
+                .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<InsertUpdateModel>() {
             @Override
             public void onComplete() {
             }

@@ -75,6 +75,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging'
 
     implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
 
 
 }

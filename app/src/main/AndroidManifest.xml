@@ -58,6 +58,7 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".Views.DeliveryRequestActivity"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".Views.LoginActivity"

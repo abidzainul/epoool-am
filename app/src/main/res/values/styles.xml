@@ -3,16 +3,16 @@
     <!-- Default application theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="actionBarStyle">@style/ActionBarStyle</item>
-        <item name="colorPrimary">@color/warnaUtama</item>
-        <item name="colorPrimaryDark">@color/warnaUtama</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="actionBarStyle">@style/ActionBarStyle</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/warnaUtama</item>
-        <item name="colorPrimaryDark">@color/warnaUtama</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
     <style name="AppTheme.Title" parent="Theme.AppCompat">
@@ -22,7 +22,7 @@
     <!-- Default application theme ends here -->
 
     <style name="ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
-        <item name="background">@color/warnaUtama</item>
+        <item name="background">@color/colorPrimary</item>
         <item name="titleTextStyle">@style/ActionBarStyle.TitleTextStyle</item>
     </style>
 

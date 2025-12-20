@@ -45,13 +45,13 @@ public class AdapterDeliveryRequest extends RecyclerView.Adapter<AdapterDelivery
             holder.note.setText("Catatan: " + data.getNote());
         }
 
-        if(data.getNoSo() != null){
-            holder.buttonDelete.setVisibility(View.GONE);
-            holder.noResi.setVisibility(View.VISIBLE);
-        } else {
-            holder.buttonDelete.setVisibility(View.VISIBLE);
-            holder.noResi.setVisibility(View.GONE);
-        }
+//        if(data.getNoSo() != null){
+//            holder.buttonDelete.setVisibility(View.GONE);
+//            holder.noResi.setVisibility(View.VISIBLE);
+//        } else {
+//            holder.buttonDelete.setVisibility(View.VISIBLE);
+//            holder.noResi.setVisibility(View.GONE);
+//        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

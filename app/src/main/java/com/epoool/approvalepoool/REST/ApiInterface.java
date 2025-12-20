@@ -61,4 +61,13 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("mobile/originator/Delivery_request/get_delivery_request")
     Observable<DeliveryRequestRes> getDeliveryRequest(@Field("token") String str1, @Field("no_so") String str2, @Field("line_so") String str3);
+
+    @FormUrlEncoded
+    @POST("mobile/originator/Delivery_request/save_delivery_request")
+    Observable<InsertUpdateModel> saveDeliveryRequest(@Field("token") String str,
+                                                      @Field("no_so") String str2,
+                                                      @Field("line_so") String str3,
+                                                      @Field("qty") String str4,
+                                                      @Field("tanggal_kirim") String str5,
+                                                      @Field("note") String str6);
 }
