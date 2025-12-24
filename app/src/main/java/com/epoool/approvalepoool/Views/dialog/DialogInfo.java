@@ -51,8 +51,6 @@ public class DialogInfo extends Dialog {
                     android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         }
 
-        ImageView ivIcon = findViewById(R.id.iv_icon);
-        FrameLayout iconContainer = findViewById(R.id.icon_container);
         TextView tvTitle = findViewById(R.id.tv_title);
         TextView tvMessage = findViewById(R.id.tv_message);
         Button btnOK = findViewById(R.id.btn_ok);
@@ -64,23 +62,17 @@ public class DialogInfo extends Dialog {
         // Set icon and colors based on dialog type
         switch (dialogType) {
             case ERROR:
-                iconContainer.setBackgroundResource(R.drawable.ic_background_error);
-                ivIcon.setImageResource(R.drawable.ic_error_24);
                 btnOK.setBackgroundResource(R.drawable.round_red_button);
                 btnOK.setTextColor(ContextCompat.getColor(context, android.R.color.white));
                 break;
             case SUCCESS:
-                iconContainer.setBackgroundResource(R.drawable.ic_background_success);
-                ivIcon.setImageResource(R.drawable.ic_check_normal_dark);
                 btnOK.setBackgroundResource(R.drawable.round_green_button);
                 btnOK.setTextColor(ContextCompat.getColor(context, android.R.color.white));
                 break;
             case INFO:
             case DEFAULT:
             default:
-                iconContainer.setBackgroundResource(R.drawable.ic_background_default);
-                ivIcon.setImageResource(R.drawable.ic_info_24);
-                btnOK.setBackgroundResource(R.drawable.round_blue_button);
+                btnOK.setBackgroundResource(R.drawable.round_primary_button);
                 btnOK.setTextColor(ContextCompat.getColor(context, android.R.color.white));
                 break;
         }

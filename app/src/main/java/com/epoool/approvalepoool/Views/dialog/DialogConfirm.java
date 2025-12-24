@@ -57,8 +57,6 @@ public class DialogConfirm extends Dialog {
                     android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         }
 
-        ImageView ivIcon = findViewById(R.id.iv_icon);
-        FrameLayout iconContainer = findViewById(R.id.icon_container);
         TextView tvTitle = findViewById(R.id.tv_title);
         TextView tvMessage = findViewById(R.id.tv_message);
         Button btnConfirm = findViewById(R.id.btn_confirm);
@@ -71,22 +69,16 @@ public class DialogConfirm extends Dialog {
 
         switch (dialogType) {
             case ERROR:
-                iconContainer.setBackgroundResource(R.drawable.ic_background_error);
-                ivIcon.setImageResource(R.drawable.ic_error_24);
                 btnConfirm.setBackgroundResource(R.drawable.round_red_button);
                 btnConfirm.setTextColor(ContextCompat.getColor(context, android.R.color.white));
                 break;
             case SUCCESS:
-                iconContainer.setBackgroundResource(R.drawable.ic_background_success);
-                ivIcon.setImageResource(R.drawable.ic_check_normal_dark);
                 btnConfirm.setBackgroundResource(R.drawable.round_green_button);
                 btnConfirm.setTextColor(ContextCompat.getColor(context, android.R.color.white));
                 break;
             case DEFAULT:
             default:
-                iconContainer.setBackgroundResource(R.drawable.ic_background_default);
-                ivIcon.setImageResource(R.drawable.ic_info_24);
-                btnConfirm.setBackgroundResource(R.drawable.round_blue_button);
+                btnConfirm.setBackgroundResource(R.drawable.round_primary_button);
                 btnConfirm.setTextColor(ContextCompat.getColor(context, android.R.color.white));
                 break;
         }

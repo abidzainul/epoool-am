@@ -9,7 +9,7 @@ public class InsertUpdateModel {
     @Expose
     private Integer code;
 
-    @SerializedName("pesan")
+    @SerializedName(value = "pesan", alternate = {"message"})
     @Expose
     private String pesan;
 

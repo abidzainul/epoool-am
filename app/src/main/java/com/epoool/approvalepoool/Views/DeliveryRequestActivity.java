@@ -101,6 +101,32 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
 
         etSendDate.setInputType(InputType.TYPE_NULL);
         etSendDate.setFocusable(false);
+
+        etQtyTruck.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(android.text.Editable s) {
+                String qtyTruckStr = s.toString().trim();
+                if (!qtyTruckStr.isEmpty()) {
+                    try {
+                        int qtyTruck = Integer.parseInt(qtyTruckStr);
+                        int calculatedQty = qtyTruck * 35;
+                        etQty.setText(String.valueOf(calculatedQty));
+                    } catch (NumberFormatException e) {
+                        etQty.setText("");
+                    }
+                } else {
+                    etQty.setText("");
+                }
+            }
+        });
         final Calendar calendar = Calendar.getInstance();
         etSendDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +168,11 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
                     Toast.makeText(DeliveryRequestActivity.this, "Please enter qty", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (Integer.parseInt(qty) > dataSo.getJatah()) {
+                    Toast.makeText(DeliveryRequestActivity.this, "QTY tidak boleh melebihi jatah ("+dataSo.getJatah()+")",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 String noSo = dataSo.getNoSo();
                 String lineSo = dataSo.getLine();
@@ -179,15 +210,7 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
         this.recyclerView.setAdapter(new AdapterDeliveryRequest(new ArrayList<>(list), new AdapterDeliveryRequest.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position, DeliveryRequest data) {
-                new DialogInfo(DeliveryRequestActivity.this)
-                        .setTitle("Success!")
-                        .setMessage("Data saved successfully")
-                        .setDialogType(DialogInfo.DialogType.SUCCESS)
-                        .setButtonText("OKE")
-                        .setOnOKListener(() -> {
-                            // Action after OK clicked
-                        })
-                        .show();
+
             }
 
             @Override
@@ -199,7 +222,7 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
                         .setConfirmText("Delete")
                         .setCancelText("Cancel")
                         .setOnConfirmListener(() -> {
-
+                            presenter.deleteData(data.getId());
                         })
                         .setOnCancelListener(() -> {
 
@@ -217,24 +240,23 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
             if (str == null) {
                 str = "Your delivery request has been submitted successfully!";
             }
-            new DialogConfirm(DeliveryRequestActivity.this)
-                    .setTitle("Success")
-                    .setMessage(str)
-                    .setDialogType(DialogConfirm.DialogType.SUCCESS)
-                    .setConfirmText("Done")
-                    .setOnConfirmListener(this::finish)
-                    .show();
+            loadData();
+            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
         } else {
-            new DialogConfirm(DeliveryRequestActivity.this)
-                    .setTitle("Error")
-                    .setMessage(str)
-                    .setDialogType(DialogConfirm.DialogType.ERROR)
-                    .setConfirmText("Retry")
-                    .setCancelText("Dismiss")
-                    .setOnConfirmListener(() -> {
+            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+        }
+    }
 
-                    })
-                    .show();
+    @Override
+    public void afterDelete(int i, String str) {
+        if (i == 1) {
+            if (str == null) {
+                str = "Your delivery request has been deleted successfully!";
+            }
+            loadData();
+            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
         }
     }
 }

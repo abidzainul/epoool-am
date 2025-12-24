@@ -69,7 +69,8 @@
                 android:id="@+id/etQty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_qty"
+                android:hint="0"
+                android:enabled="false"
                 android:inputType="number"
                 android:autofillHints="postalAddress" />
         </LinearLayout>

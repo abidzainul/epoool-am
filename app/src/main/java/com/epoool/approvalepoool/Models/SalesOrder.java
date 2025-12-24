@@ -29,7 +29,7 @@ public class SalesOrder {
 	private String release;
 
 	@SerializedName("jatah")
-	private String jatah;
+	private int jatah;
 
 	@SerializedName("pallet")
 	private String pallet;
@@ -150,7 +150,7 @@ public class SalesOrder {
 		return release;
 	}
 
-	public String getJatah(){
+	public int getJatah(){
 		return jatah;
 	}
 

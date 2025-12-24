@@ -31,7 +31,8 @@ public class Constant {
     public static int width;
 
     static {
-        baseUrl = ApiClient.DEV ? "http://10.0.2.2/" : "https://app.epoool.id/";
+//        baseUrl = ApiClient.DEV ? "http://10.0.2.2/" : "https://app.epoool.id/";
+        baseUrl = ApiClient.DEV ? "https://dev.epoool.id/" : "https://app.epoool.id/";
         url = baseUrl + "index.php/mobile/pengalihan/api_pengalihan/";
         newUrl = baseUrl + "index.php/mobile/baru_15042020/api_driver/";
         urlImageOriginator = baseUrl + "berkas/foto_user/originator/";

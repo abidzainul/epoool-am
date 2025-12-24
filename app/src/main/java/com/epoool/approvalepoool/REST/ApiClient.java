@@ -22,7 +22,8 @@ public class ApiClient {
     private static Retrofit retrofit = null;
 
     static {
-        baseUrl = BuildConfig.DEBUG ? "http://10.0.2.2/" : "https://app.epoool.id/";
+//        baseUrl = BuildConfig.DEBUG ? "http://10.0.2.2/" : "https://app.epoool.id/";
+        baseUrl = BuildConfig.DEBUG ? "https://dev.epoool.id/" : "https://app.epoool.id/";
         url = baseUrl + "index.php/mobile/api_android_driver/";
         urlImageOriginator = baseUrl + "berkas/foto_user/originator/";
         urlImageKendala = baseUrl + "berkas/foto_claim/img_problem/";
