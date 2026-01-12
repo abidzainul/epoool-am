@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "100408952184",
+    "project_id": "epoool-1e40b",
+    "storage_bucket": "epoool-1e40b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100408952184:android:08fbae027c01271182348d",
+        "android_client_info": {
+          "package_name": "com.epoool.am"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBromYJkT0twmj3M8SY5Jqz4o16SUhZGGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100408952184:android:425abc31e3b2430582348d",
+        "android_client_info": {
+          "package_name": "com.epoool.transport"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBromYJkT0twmj3M8SY5Jqz4o16SUhZGGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100408952184:android:846d3b0db3bc4a5f82348d",
+        "android_client_info": {
+          "package_name": "id.sisi.epoool.originator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBromYJkT0twmj3M8SY5Jqz4o16SUhZGGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

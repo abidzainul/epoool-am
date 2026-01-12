@@ -1,3 +1,0 @@
-Key Store pass: 3poool@sisi#
-Key Alias: sisiepoool
-Key pass: 3poool@sisi#
