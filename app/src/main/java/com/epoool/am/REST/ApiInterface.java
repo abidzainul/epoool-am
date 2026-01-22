@@ -46,8 +46,14 @@ public interface ApiInterface {
     Observable<InsertUpdateModel> insertPengalihan(@Field("id_username") String str, @Field("token_fcm") String str2, @Field("no_spj") String str3, @Field("receiver") String str4, @Field("alasan") String str5);
 
     @FormUrlEncoded
-    @POST("mobile/pengalihan/Api_pengalihan/login_originator_as_am")
-    Observable<UserLoginModel> login(@Field("username") String str, @Field("password") String str2);
+//    @POST("mobile/pengalihan/Api_pengalihan/login_originator_as_am")
+    @POST("mobile/api_android_driver/login_by_username")
+    Observable<UserLoginModel> login(@Field("username") String str,
+                                     @Field("password") String str2,
+                                     @Field("versi") String str3,
+                                     @Field("os") String str4,
+                                     @Field("sn") String str5,
+                                     @Field("key") String str6);
 
     @FormUrlEncoded
     @POST("mobile/pengalihan/api_pengalihan/update_pengalihan_v2")

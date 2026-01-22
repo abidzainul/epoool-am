@@ -125,17 +125,17 @@
                 <ImageView
                     android:id="@+id/iv_dot"
                     android:layout_width="12dp"
-                    android:layout_height="20dp"
+                    android:layout_height="12dp"
                     android:layout_below="@+id/rl_asal_item_delivery"
-                    android:src="@drawable/dot_vertical_3"
+                    android:src="@drawable/dot_vertical_2"
                     card_view:tint="@color/app_green" />
 
                 <ImageView
                     android:id="@+id/iv_dot2"
                     android:layout_width="12dp"
-                    android:layout_height="20dp"
+                    android:layout_height="12dp"
                     android:layout_below="@+id/iv_dot"
-                    android:src="@drawable/dot_vertical_3"
+                    android:src="@drawable/dot_vertical_2"
                     card_view:tint="@color/yellow" />
 
 <!--                <LinearLayout-->

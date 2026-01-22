@@ -222,6 +222,7 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
                         .setCancelText("Cancel")
                         .setOnConfirmListener(() -> {
                             presenter.deleteData(data.getId());
+                            loadData();
                         })
                         .setOnCancelListener(() -> {
 

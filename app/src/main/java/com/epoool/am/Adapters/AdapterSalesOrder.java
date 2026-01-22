@@ -37,7 +37,7 @@ public class AdapterSalesOrder extends RecyclerView.Adapter<AdapterSalesOrder.Vi
 
         holder.tvDistibutor.setText(data.getDistributor());
         holder.tvJenisMuatan.setText(data.getMaterial());
-        holder.tvQty.setText(data.getTotalReleasedQty());
+        holder.tvQty.setText("Qty DO: " + data.getTotalReleasedQty());
         holder.tvTanggal.setText(data.getDeliveryDate());
         holder.tvFrom.setText(data.getNamaGudang());
 //        holder.tvAddressFrom.setText(data.getAddressShipTo());

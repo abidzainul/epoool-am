@@ -12,7 +12,9 @@ import com.epoool.am.Models.DeliveryRequest;
 import com.epoool.am.R;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AdapterDeliveryRequest extends RecyclerView.Adapter<AdapterDeliveryRequest.ViewHolder>{
     private ArrayList<DeliveryRequest> listdata;
@@ -20,7 +22,7 @@ public class AdapterDeliveryRequest extends RecyclerView.Adapter<AdapterDelivery
     private boolean enable = true;
 
     public AdapterDeliveryRequest(ArrayList<DeliveryRequest> listdata, AdapterDeliveryRequest.OnItemClickListener listener) {
-        this.listdata = listdata;
+        this.listdata = filterDuplicatesById(listdata);
         this.listener = listener;
     }
 
@@ -37,7 +39,7 @@ public class AdapterDeliveryRequest extends RecyclerView.Adapter<AdapterDelivery
 
         holder.noRequest.setText("No. " + data.getDeliveryRequestNo());
         holder.qty.setText("Qty: " + data.getQty());
-        holder.sendDate.setText(data.getDateAdd());
+        holder.sendDate.setText(data.getRandomDate());
         holder.noResi.setText("Resi: "+data.getNoSo());
 
         if(!data.getNote().isEmpty()){
@@ -79,8 +81,22 @@ public class AdapterDeliveryRequest extends RecyclerView.Adapter<AdapterDelivery
 
     public void setListData(ArrayList<DeliveryRequest> listdata){
         this.listdata.clear();
-        this.listdata = listdata;
+        this.listdata = filterDuplicatesById(listdata);
         notifyDataSetChanged();
+    }
+
+    private ArrayList<DeliveryRequest> filterDuplicatesById(ArrayList<DeliveryRequest> list) {
+        if (list == null) {
+            return new ArrayList<>();
+        }
+
+        Map<String, DeliveryRequest> uniqueMap = new LinkedHashMap<>();
+        for (DeliveryRequest item : list) {
+            if (item.getId() != null && !item.getId().isEmpty()) {
+                uniqueMap.put(item.getId(), item);
+            }
+        }
+        return new ArrayList<>(uniqueMap.values());
     }
 
     public interface OnItemClickListener {
