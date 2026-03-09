@@ -2,6 +2,7 @@ package com.epoool.am.Utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Build;
 import android.util.Log;
@@ -18,7 +19,6 @@ import com.epoool.am.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -34,10 +34,10 @@ public class Function {
     }
 
     public static void snackBarRed(Context context, String str) {
-        Snackbar snackbarMake = Snackbar.make(((Activity) context).findViewById(R.id.content), str, Snackbar.LENGTH_LONG);
+        Snackbar snackbarMake = Snackbar.make(((Activity) context).findViewById(android.R.id.content), str, Snackbar.LENGTH_LONG);
         View view = snackbarMake.getView();
-        view.setBackgroundColor(SupportMenu.CATEGORY_MASK);
-        ((TextView) view.findViewById(R.id.snackbar_text)).setTextColor(-1);
+        view.setBackgroundColor(Color.RED);
+        ((TextView) view.findViewById(com.google.android.material.R.id.snackbar_text)).setTextColor(-1);
         snackbarMake.show();
     }
 
@@ -64,14 +64,14 @@ public class Function {
 
     public static void sendTokenDriver(Context context) {
         try {
-            FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
+            FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
                 if (!task.isSuccessful()) {
                     task.getException().printStackTrace();
                     return;
                 }
 
                 // Get new Instance ID token
-                String token = task.getResult().getToken();
+                String token = task.getResult();
                 Constant.token_fcm = token;
 
                 final OkHttpHelper ok = new OkHttpHelper();

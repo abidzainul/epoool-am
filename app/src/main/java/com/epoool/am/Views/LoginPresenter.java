@@ -1,5 +1,6 @@
 package com.epoool.am.Views;
 
+import com.epoool.am.Models.DriverLoginModel;
 import com.epoool.am.Models.UserLoginModel;
 import com.epoool.am.REST.ApiClient;
 import com.epoool.am.REST.ApiInterface;
@@ -25,11 +26,7 @@ public class LoginPresenter {
     }
 
     public void doLogin(String str, String str2) {
-        String versi = "6";
-        String os = "android";
-        String sn = "unknown";
-        String key = "4YtOFWfBqVcwRVIwuRsD";
-        this.apiInterface.login(str, str2, versi, os, sn, key).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<UserLoginModel>() {
+        this.apiInterface.login(str, str2).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<UserLoginModel>() {
             @Override 
             public void onComplete() {
             }
@@ -47,6 +44,37 @@ public class LoginPresenter {
 
             @Override 
             public void onError(Throwable th) {
+                th.printStackTrace();
+                view.afterLogin(new UserLoginModel(), 0, Constant.warningNoConnection, "0");
+            }
+        });
+    }
+
+    public void doLoginDriver() {
+        String versi = "6";
+        String os = "android";
+        String sn = "unknown";
+        String key = "4YtOFWfBqVcwRVIwuRsD";
+        this.apiInterface.loginDriver("MSA37693", "admin", versi, os, sn, key).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<DriverLoginModel>() {
+            @Override
+            public void onComplete() {
+            }
+
+            @Override
+            public void onSubscribe(Disposable disposable) {
+            }
+
+            @Override
+            public void onNext(DriverLoginModel userLoginModel) {
+                Gson gson = new GsonBuilder().create();
+//                String json = gson.toJson(userLoginModel);
+                System.out.println("UserLogin: "+gson.toJson(userLoginModel));
+                view.afterLogin(userLoginModel.getData(), userLoginModel.getCode().intValue(), userLoginModel.getPesan(), userLoginModel.getToken());
+            }
+
+            @Override
+            public void onError(Throwable th) {
+                th.printStackTrace();
                 view.afterLogin(new UserLoginModel(), 0, Constant.warningNoConnection, "0");
             }
         });

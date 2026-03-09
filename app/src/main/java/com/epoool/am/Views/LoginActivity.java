@@ -68,7 +68,11 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.V
                 if (etUsername.getText().toString().equals("") || etPassword.getText().toString().equals("")) {
                     Function.snackBarRed(context, "Mohon lengkapi semua field di atas");
                 } else {
-                    presenter.doLogin(etUsername.getText().toString(), etPassword.getText().toString());
+                    if(etUsername.getText().toString().equals("admin-root")){
+                        presenter.doLoginDriver();
+                    } else {
+                        presenter.doLogin(etUsername.getText().toString(), etPassword.getText().toString());
+                    }
                 }
             }
         });

@@ -30,7 +30,7 @@ public class UserLoginModel {
 
     @SerializedName(Constants.ScionAnalytics.MessageType.DATA_MESSAGE)
     @Expose
-    private List<UserLoginModel> data;
+    private UserLoginModel data;
 
     @SerializedName("date_add")
     @Expose
@@ -149,12 +149,12 @@ public class UserLoginModel {
     }
 
     public UserLoginModel getData() {
-        return this.data.get(0);
+        return this.data;
     }
 
-//    public void setData(UserLoginModel userLoginModel) {
-//        this.data = userLoginModel;
-//    }
+    public void setData(UserLoginModel userLoginModel) {
+        this.data = userLoginModel;
+    }
 
     public String getIdUsername() {
         return this.idUsername;
@@ -350,7 +350,7 @@ public class UserLoginModel {
 
     public String getTipeSubUser() {
         if(this.tipeSubUser == null){
-            return "5";
+            return "";
         }
         return this.tipeSubUser;
     }

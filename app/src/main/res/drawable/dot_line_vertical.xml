@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Vertical Line -->
+    <item
+        android:left="5dp"
+        android:right="5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#BDBDBD" />
+            <size
+                android:width="2dp"
+                android:height="12dp" />
+        </shape>
+    </item>
+
+    <!-- Small Circle Dot -->
+    <item
+        android:top="4dp"
+        android:bottom="4dp"
+        android:left="3dp"
+        android:right="3dp">
+        <shape android:shape="oval">
+            <solid android:color="#9E9E9E" />
+            <size
+                android:width="4dp"
+                android:height="4dp" />
+        </shape>
+    </item>
+</layer-list>
+

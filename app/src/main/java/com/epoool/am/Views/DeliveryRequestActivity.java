@@ -39,7 +39,7 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
     private RecyclerView recyclerView;
     private SwipyRefreshLayout srl;
     private TextView tvKosong;
-    private FloatingActionButton fabAdd;
+    private Button addRequest;
     Gson gson = new GsonBuilder().create();
     final String TAG = "DeliveryRequestActivity";
 
@@ -52,7 +52,7 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
         this.recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         this.srl = (SwipyRefreshLayout) findViewById(R.id.srl_temp);
         this.tvKosong = (TextView) findViewById(R.id.tv_kosong);
-        this.fabAdd = (FloatingActionButton) findViewById(R.id.fab_add);
+        this.addRequest = (Button) findViewById(R.id.btn_request);
 
         String soJson = getIntent().getStringExtra("so_data");
         Log.d(TAG, "onCreate: dataSo=" + soJson);
@@ -62,7 +62,7 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
         this.presenter = new DeliveryRequestPresenter(this);
         loadData();
 
-        this.fabAdd.setOnClickListener(new View.OnClickListener() {
+        this.addRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showAddDeliveryDialog();
@@ -167,9 +167,26 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
                     Toast.makeText(DeliveryRequestActivity.this, "Please enter qty", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (Integer.parseInt(qty) > dataSo.getJatah()) {
-                    Toast.makeText(DeliveryRequestActivity.this, "QTY tidak boleh melebihi jatah ("+dataSo.getJatah()+")",
-                            Toast.LENGTH_SHORT).show();
+
+                int existingTotalQty = 0;
+                for (DeliveryRequest item : currentDeliveryList) {
+                    try {
+                        int itemQty = Integer.parseInt(item.getTotalQty() != null ? item.getTotalQty() : "0");
+                        existingTotalQty += itemQty;
+                    } catch (NumberFormatException e) {
+
+                    }
+                }
+
+                int newQty = Integer.parseInt(qty);
+                int totalQtyAfterAdd = existingTotalQty + newQty;
+
+                int jatah = dataSo.getJatah();
+                if (totalQtyAfterAdd > jatah) {
+                    Toast.makeText(DeliveryRequestActivity.this,
+                            "Total QTY (" + totalQtyAfterAdd + ") tidak boleh melebihi jatah (" + jatah + ")\n" +
+                            "QTY yang sudah ada: " + existingTotalQty,
+                            Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -198,9 +215,12 @@ public class DeliveryRequestActivity extends AppCompatActivity implements Delive
         this.presenter.loadData(noSo, lineSo);
     }
 
+    private List<DeliveryRequest> currentDeliveryList = new ArrayList<>();
+
     @Override
     public void showDeliveryRequest(List<DeliveryRequest> list, int i, String str) {
         this.srl.setRefreshing(false);
+        this.currentDeliveryList = list;
         if (i != 1 || list.size() == 0) {
             this.tvKosong.setVisibility(View.VISIBLE);
         } else {

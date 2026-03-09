@@ -83,15 +83,15 @@ public class AdapterSalesOrder extends RecyclerView.Adapter<AdapterSalesOrder.Vi
         public Button btnRequest;
         public ViewHolder(View itemView) {
             super(itemView);
-            this.tvDistibutor = (TextView) itemView.findViewById(R.id.tv_distibutor);
-            this.tvTanggal = (TextView) itemView.findViewById(R.id.tv_tanggal);
-            this.tvJenisMuatan = (TextView) itemView.findViewById(R.id.tv_jenis_muatan);
+            this.tvDistibutor = (TextView) itemView.findViewById(R.id.tv_distributor);
+            this.tvTanggal = (TextView) itemView.findViewById(R.id.tv_delivery_date);
+            this.tvJenisMuatan = (TextView) itemView.findViewById(R.id.tv_material);
             this.tvQty = (TextView) itemView.findViewById(R.id.tv_qty);
-            this.tvFrom = (TextView) itemView.findViewById(R.id.tv_from);
-            this.tvAddressFrom = (TextView) itemView.findViewById(R.id.tv_address_from);
-            this.tvTo = (TextView) itemView.findViewById(R.id.tv_to);
-            this.tvAddressTo = (TextView) itemView.findViewById(R.id.tv_address_to);
-            this.btnRequest = (Button) itemView.findViewById(R.id.btnRequest);
+            this.tvFrom = (TextView) itemView.findViewById(R.id.tv_nama_gudang);
+            this.tvAddressFrom = (TextView) itemView.findViewById(R.id.tv_address_gudang);
+            this.tvTo = (TextView) itemView.findViewById(R.id.tv_name_ship_to);
+            this.tvAddressTo = (TextView) itemView.findViewById(R.id.tv_address_ship_to);
+            this.btnRequest = (Button) itemView.findViewById(R.id.btn_request);
         }
     }
 

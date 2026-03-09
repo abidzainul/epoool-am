@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /* loaded from: classes.dex */
 public class ApiClient {
-    public static boolean DEV = true;
+    public static boolean DEV = false;
     public static String baseUrl;
     public static String url;
     public static String urlImageKendala;

@@ -1,64 +1,348 @@
 {
   "project_info": {
-    "project_number": "100408952184",
-    "project_id": "epoool-1e40b",
-    "storage_bucket": "epoool-1e40b.firebasestorage.app"
+    "project_number": "879836875249",
+    "firebase_url": "https://my-project-1480997601519.firebaseio.com",
+    "project_id": "my-project-1480997601519",
+    "storage_bucket": "my-project-1480997601519.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:100408952184:android:08fbae027c01271182348d",
+        "mobilesdk_app_id": "1:879836875249:android:2bdccaa9cb6c19b7525c50",
         "android_client_info": {
           "package_name": "com.epoool.am"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBromYJkT0twmj3M8SY5Jqz4o16SUhZGGE"
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:100408952184:android:425abc31e3b2430582348d",
+        "mobilesdk_app_id": "1:879836875249:android:01f38a57c63c00b3525c50",
         "android_client_info": {
-          "package_name": "com.epoool.transport"
+          "package_name": "com.epoool.approvalepoool"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBromYJkT0twmj3M8SY5Jqz4o16SUhZGGE"
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:100408952184:android:846d3b0db3bc4a5f82348d",
+        "mobilesdk_app_id": "1:879836875249:android:4e6162d80bbf31fb525c50",
+        "android_client_info": {
+          "package_name": "com.epoool.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879836875249:android:4abe357a6650b03b",
+        "android_client_info": {
+          "package_name": "com.epoool.ekspeditor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879836875249:android:fa16a953a480e3e1",
+        "android_client_info": {
+          "package_name": "com.epoool.originator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879836875249:android:87231fd7286fcff6",
+        "android_client_info": {
+          "package_name": "com.epoool.receiver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879836875249-5j156d75fpqsqgvvhm5mggg4lc9t5gvh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epoool.receiver",
+            "certificate_hash": "e5e28839bc3543268c6254ee6a839c2afa96bde5"
+          }
+        },
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879836875249:android:3764b75cc2827038525c50",
+        "android_client_info": {
+          "package_name": "com.semengresik.epoool_transportasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879836875249:android:f6992f91b5e44e20",
+        "android_client_info": {
+          "package_name": "com.studio.aptikma.semengresik.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879836875249-7f4b26e18m1jbr8ihiq9co3njh3880vc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.studio.aptikma.semengresik.driver",
+            "certificate_hash": "5873ce726e4abf2b3f4f9d9ed8f4992222794eeb"
+          }
+        },
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879836875249:android:a33267e22a0a5676525c50",
         "android_client_info": {
           "package_name": "id.sisi.epoool.originator"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBromYJkT0twmj3M8SY5Jqz4o16SUhZGGE"
+          "current_key": "AIzaSyC550iPjSl3NyTLo0t4LagMTkHRdP687ws"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879836875249-11gv7t3geemn41tvpu7ljanlc2npc5jc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879836875249-b0sa6afbokdf3obnp284i1dj8epbupeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio.aptikma.epoool.ekspeditor"
+              }
+            }
+          ]
         }
       }
     }

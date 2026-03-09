@@ -1,6 +1,8 @@
 package com.epoool.am.Utils;
 
 import android.content.Intent;
+
+import com.epoool.am.BuildConfig;
 import com.epoool.am.Models.UserLoginModel;
 import com.epoool.am.R;
 import com.epoool.am.REST.ApiClient;
@@ -31,8 +33,8 @@ public class Constant {
     public static int width;
 
     static {
-//        baseUrl = ApiClient.DEV ? "http://10.0.2.2/" : "https://app.epoool.id/";
-        baseUrl = ApiClient.DEV ? "https://dev.epoool.id/" : "https://app.epoool.id/";
+//        baseUrl = BuildConfig.DEBUG ? "http://10.0.2.2/" : "https://app.epoool.id/";
+        baseUrl = BuildConfig.DEBUG ? "https://dev.epoool.id/" : "https://app.epoool.id/";
         url = baseUrl + "index.php/mobile/pengalihan/api_pengalihan/";
         newUrl = baseUrl + "index.php/mobile/baru_15042020/api_driver/";
         urlImageOriginator = baseUrl + "berkas/foto_user/originator/";
